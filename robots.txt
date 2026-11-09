@@ -1,0 +1,5 @@
+# PENDIENTE: sustituir ronda.example por el dominio real antes de publicar.
+User-agent: *
+Allow: /
+
+Sitemap: https://ronda.example/sitemap.xml

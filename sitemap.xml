@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PENDIENTE: sustituir ronda.example por el dominio real antes de publicar. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ronda.example/</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://ronda.example/aviso-legal</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://ronda.example/privacidad</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://ronda.example/cookies</loc><lastmod>2026-11-08</lastmod></url>
+</urlset>
