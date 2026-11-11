@@ -9,14 +9,11 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var movimientoReducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var COLOR_TEMA = { claro: '#1A100E', oscuro: '#0C0706' };
+  var COLOR_TEMA = { claro: '#F4F0E9', oscuro: '#090807' };
 
-  /* ---------- Tema claro / oscuro ---------- */
-  var mqOscuro = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+  /* ---------- Tema: oscuro por defecto, variante clara elegible ---------- */
   function temaActivo() {
-    var elegido = raiz.getAttribute('data-tema');
-    if (elegido) return elegido;
-    return mqOscuro && mqOscuro.matches ? 'oscuro' : 'claro';
+    return raiz.getAttribute('data-tema') === 'claro' ? 'claro' : 'oscuro';
   }
   function pintarTema() {
     var activo = temaActivo();
@@ -37,19 +34,48 @@
       pintarTema();
     });
   });
-  if (mqOscuro && mqOscuro.addEventListener) mqOscuro.addEventListener('change', pintarTema);
   pintarTema();
 
   /* ---------- Cabecera, volver arriba y barra móvil ---------- */
   var cab = $('#cabecera');
   var arriba = $('#arriba');
+  var progreso = $('.progreso span');
+  var anillo = $('#arriba .anillo-prog');
+  var hero = $('.hero');
+  var placas = movimientoReducido ? [] : $$('.interludio, .contacto');
+  var pendienteScroll = false;
+  /* Un solo cálculo por fotograma: cabecera, barra de progreso de lectura,
+     anillo del botón «volver arriba» y desplazamiento suave de la portada */
   function alScroll() {
+    pendienteScroll = false;
     var y = window.scrollY;
+    var total = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var p = Math.min(1, Math.max(0, y / total));
     if (cab) cab.classList.toggle('solida', y > 8);
+    if (hero) document.body.classList.toggle('tras-portada', y > hero.offsetHeight * 0.55);
     if (arriba) arriba.classList.toggle('visible', y > 700);
+    if (progreso) progreso.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    if (anillo) anillo.style.strokeDashoffset = (100 - p * 100).toFixed(2);
+    if (hero && !movimientoReducido) {
+      var alto = hero.offsetHeight || 1;
+      var h = Math.min(1, y / alto);
+      hero.style.setProperty('--sy', h.toFixed(3));
+    }
+    if (placas.length) {
+      var vh = window.innerHeight;
+      placas.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.bottom < -50 || r.top > vh + 50) return;
+        var c = (r.top + r.height / 2 - vh / 2) / (vh + r.height);
+        el.style.setProperty('--desp', (c * -90).toFixed(1) + 'px');
+      });
+    }
   }
   alScroll();
-  window.addEventListener('scroll', alScroll, { passive: true });
+  window.addEventListener('scroll', function () {
+    if (!pendienteScroll) { pendienteScroll = true; requestAnimationFrame(alScroll); }
+  }, { passive: true });
+  window.addEventListener('resize', alScroll, { passive: true });
   if (arriba) arriba.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: movimientoReducido ? 'auto' : 'smooth' });
     var destino = $('#contenido');
@@ -57,7 +83,7 @@
   });
 
   var barra = $('#barra-movil');
-  var accionesPortada = $('.portada .acciones');
+  var accionesPortada = $('.hero-acciones');
   var contacto = $('#contacto');
   var pasadaPortada = false, enContacto = false;
   function mostrarBarra() {
@@ -81,23 +107,36 @@
   /* ---------- Menú móvil ---------- */
   var btnMenu = $('.btn-menu');
   var menu = $('#menu');
+  var txtMenu = btnMenu && $('.btn-menu-txt', btnMenu);
+  var fueraMenu = $$('main, .pie, .flotantes, .proto-barra, .barra-movil');
+  function ponerMenu(abierto) {
+    /* El menú empieza justo bajo la cabecera, esté donde esté (la barra de prototipo la desplaza al principio) */
+    if (abierto && cab) menu.style.paddingTop = Math.round(Math.max(0, cab.getBoundingClientRect().bottom) + window.innerHeight * 0.04) + 'px';
+    menu.classList.toggle('abierto', abierto);
+    raiz.classList.toggle('menu-abierto', abierto);
+    btnMenu.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    if (txtMenu) txtMenu.textContent = abierto ? 'Cerrar' : 'Menú';
+    /* Mientras el menú cubre la pantalla, lo de detrás no recibe foco ni clics */
+    fueraMenu.forEach(function (el) { if (abierto) el.setAttribute('inert', ''); else el.removeAttribute('inert'); });
+  }
   function cerrarMenu(devolverFoco) {
-    if (!menu || !btnMenu) return;
-    menu.classList.remove('abierto');
-    btnMenu.setAttribute('aria-expanded', 'false');
-    btnMenu.textContent = 'Menú';
+    if (!menu || !btnMenu || !menu.classList.contains('abierto')) return;
+    ponerMenu(false);
     if (devolverFoco) btnMenu.focus();
   }
   if (btnMenu && menu) {
     btnMenu.addEventListener('click', function () {
-      var abierto = menu.classList.toggle('abierto');
-      btnMenu.setAttribute('aria-expanded', abierto ? 'true' : 'false');
-      btnMenu.textContent = abierto ? 'Cerrar' : 'Menú';
-      if (abierto) { var a = $('a', menu); if (a) a.focus(); }
+      var abierto = !menu.classList.contains('abierto');
+      ponerMenu(abierto);
+      if (abierto) { var a = $('a', menu); if (a) setTimeout(function () { a.focus({ preventScroll: true }); }, movimientoReducido ? 0 : 320); }
     });
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) cerrarMenu(false); });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.classList.contains('abierto')) cerrarMenu(true);
+      if (e.key === 'Escape') cerrarMenu(true);
+    });
+    /* Clic fuera del menú: se cierra */
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('#menu') && !e.target.closest('.btn-menu')) cerrarMenu(false);
     });
   }
 
@@ -144,6 +183,7 @@
       return { el: b, f: mejor, mesa: $('.p-mesa-g[data-mesa="' + b.getAttribute('data-mesa') + '"]', plano) };
     });
     var pos = paradas.length ? (paradas[0].f + 0.92) % 1 : 0, previo = null, activo = false, pedido = null;
+    var dice = $('.plano-dice', plano), ultimaParada;
     var difer = function (a, f) { var d = a - f; if (d < -0.5) d += 1; if (d > 0.5) d -= 1; return d; };
     plano.classList.add('animado');
     var cuadro = function (t) {
@@ -157,11 +197,23 @@
       previo = t;
       var pt = ruta.getPointAtLength(pos * L);
       yo.setAttribute('transform', 'translate(' + pt.x.toFixed(1) + ' ' + pt.y.toFixed(1) + ')');
+      var hablando = null;
       paradas.forEach(function (p) {
         var d = difer(pos, p.f);
-        p.el.classList.toggle('visible', d >= -0.01 && d < 0.14);
+        var visible = d >= -0.01 && d < 0.14;
+        p.el.classList.toggle('visible', visible);
+        if (visible) hablando = p;
         if (p.mesa) p.mesa.classList.toggle('activa', d >= -0.01 && d < 0.04);
       });
+      /* Réplica legible (solo se ve en móvil) de lo que se dice en la parada actual */
+      if (dice && hablando !== ultimaParada) {
+        ultimaParada = hablando;
+        dice.classList.toggle('vacio', !hablando);
+        if (hablando) {
+          dice.firstChild.textContent = 'Mesa ' + hablando.el.getAttribute('data-mesa').replace(/\D/g, '');
+          dice.lastChild.textContent = hablando.el.textContent.trim();
+        }
+      }
       pedido = requestAnimationFrame(cuadro);
     };
     var arrancar = function (si) {
@@ -179,14 +231,24 @@
   var toast = $('#toast'), toastTimer = null;
   function avisar(titulo, texto) {
     if (!toast) return;
-    toast.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><div><b></b><span></span></div><button type="button" aria-label="Cerrar aviso"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button>';
+    toast.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><div><b></b><span></span></div><button type="button" aria-label="Cerrar aviso"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button><i class="toast-tiempo" aria-hidden="true"></i>';
     $('b', toast).textContent = titulo;
     $('span', toast).textContent = texto;
+    toast.classList.remove('pausa');
     toast.hidden = false;
     requestAnimationFrame(function () { toast.classList.add('visible'); });
     $('button', toast).addEventListener('click', cerrarToast);
     clearTimeout(toastTimer);
     toastTimer = setTimeout(cerrarToast, 7000);
+  }
+  /* El aviso no se cierra mientras el ratón o el foco están encima */
+  if (toast) {
+    var pausarToast = function () { clearTimeout(toastTimer); toast.classList.add('pausa'); };
+    var seguirToast = function () { toast.classList.remove('pausa'); clearTimeout(toastTimer); toastTimer = setTimeout(cerrarToast, 3000); };
+    toast.addEventListener('mouseenter', pausarToast);
+    toast.addEventListener('focusin', pausarToast);
+    toast.addEventListener('mouseleave', seguirToast);
+    toast.addEventListener('focusout', seguirToast);
   }
   function cerrarToast() {
     if (!toast) return;
@@ -274,7 +336,7 @@
     function mostrarAviso(tipo, titulo, texto) {
       var trazo = tipo === 'ok' ? '<path d="M20 6 9 17l-5-5"/>' : '<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/>';
       aviso.className = 'aviso activo ' + tipo;
-      aviso.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">' + trazo + '</svg><div><b></b><span></span></div>';
+      aviso.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">' + trazo + '</svg><div><b></b><span></span></div>';
       $('b', aviso).textContent = titulo;
       $('span', aviso).textContent = texto;
       aviso.setAttribute('tabindex', '-1');
@@ -291,6 +353,13 @@
       var malos = Object.keys(campos).filter(function (n) { return !validar(n); });
       if (malos.length) {
         mostrarAviso('ko', malos.length === 1 ? 'Hay 1 campo por revisar.' : 'Hay ' + malos.length + ' campos por revisar.', 'Corrige lo marcado y vuelve a pulsar «Solicitar propuesta».');
+        /* Pequeña sacudida de los campos con error (no con movimiento reducido) */
+        if (!movimientoReducido) malos.forEach(function (n) {
+          var c = campos[n].closest('.campo');
+          if (!c) return;
+          c.classList.remove('sacudir'); void c.offsetWidth; c.classList.add('sacudir');
+          setTimeout(function () { c.classList.remove('sacudir'); }, 450);
+        });
         campos[malos[0]].focus();
         return;
       }
@@ -310,8 +379,9 @@
         return;
       }
       btn.setAttribute('aria-busy', 'true');
-      var textoBtn = btn.textContent;
-      btn.textContent = 'Enviando… ';
+      var txtBtn = $('.cta-txt', btn) || btn;
+      var textoBtn = txtBtn.textContent;
+      txtBtn.textContent = 'Enviando…';
       var datos = {
         access_key: CONFIG.web3formsKey,
         subject: 'Nueva solicitud de propuesta desde la web de Ronda',
@@ -344,8 +414,127 @@
         .catch(function () {
           mostrarAviso('ko', 'No se ha podido enviar.', 'Parece que no hay conexión. Revisa tu internet e inténtalo de nuevo.');
         })
-        .then(function () { btn.removeAttribute('aria-busy'); btn.textContent = textoBtn; });
+        .then(function () { btn.removeAttribute('aria-busy'); txtBtn.textContent = textoBtn; });
     });
+  }
+
+  /* ---------- Contador de caracteres del mensaje ---------- */
+  var mensaje = $('#f-mensaje'), contador = $('#a-mensaje');
+  if (mensaje && contador) {
+    var max = +mensaje.getAttribute('maxlength') || 1000;
+    var contar = function () {
+      var n = mensaje.value.length;
+      contador.textContent = n + ' / ' + max + ' caracteres';
+      contador.classList.toggle('cerca', n > max * 0.9);
+    };
+    mensaje.addEventListener('input', contar);
+    contar();
+  }
+
+  /* ---------- Preguntas frecuentes: apertura y cierre con altura animada ---------- */
+  $$('.faq details').forEach(function (d) {
+    var resumen = $('summary', d), anim = null;
+    if (!resumen || !d.animate) return;
+    resumen.addEventListener('click', function (e) {
+      if (movimientoReducido) return;
+      e.preventDefault();
+      var abriendo = !d.open || d.classList.contains('cerrando');
+      var inicio = d.offsetHeight + 'px';
+      if (anim) anim.cancel();
+      d.classList.toggle('cerrando', !abriendo);
+      if (abriendo) d.open = true;
+      var fin = abriendo ? d.scrollHeight + 'px' : resumen.offsetHeight + 'px';
+      d.style.overflow = 'hidden';
+      anim = d.animate({ height: [inicio, fin] }, { duration: abriendo ? 280 : 190, easing: abriendo ? 'cubic-bezier(.16,1,.3,1)' : 'cubic-bezier(.4,0,1,1)' });
+      anim.onfinish = function () {
+        anim = null; d.style.overflow = '';
+        if (!abriendo) d.open = false;
+        d.classList.remove('cerrando');
+      };
+      anim.oncancel = function () { d.style.overflow = ''; };
+    });
+  });
+
+  /* ---------- Portada: ligera profundidad al mover el ratón ---------- */
+  if (hero && !movimientoReducido && window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var objetivoX = 0, objetivoY = 0, actualX = 0, actualY = 0, girando = null;
+    var paso = function () {
+      actualX += (objetivoX - actualX) * 0.08;
+      actualY += (objetivoY - actualY) * 0.08;
+      hero.style.setProperty('--px', actualX.toFixed(3));
+      hero.style.setProperty('--py', actualY.toFixed(3));
+      if (Math.abs(objetivoX - actualX) > 0.001 || Math.abs(objetivoY - actualY) > 0.001) girando = requestAnimationFrame(paso);
+      else girando = null;
+    };
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      objetivoX = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      objetivoY = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      if (!girando) girando = requestAnimationFrame(paso);
+    });
+    hero.addEventListener('pointerleave', function () {
+      objetivoX = 0; objetivoY = 0;
+      if (!girando) girando = requestAnimationFrame(paso);
+    });
+  }
+
+  /* ---------- Portada: luces cálidas en suspensión ---------- */
+  var lienzo = $('.hero-luces');
+  if (lienzo && hero && lienzo.getContext && !movimientoReducido && window.requestAnimationFrame) {
+    var ctx = lienzo.getContext('2d'), luces = [], ancho = 0, alto = 0, dpr = 1, enMarcha = false, idLuces = null, tPrevio = null;
+    var crearLuces = function () {
+      var n = ancho < 760 ? 14 : 26;
+      luces = [];
+      for (var i = 0; i < n; i++) {
+        luces.push({
+          x: Math.random() * ancho, y: Math.random() * alto,
+          r: (6 + Math.random() * 30) * (ancho < 760 ? .8 : 1),
+          a: .05 + Math.random() * .13,
+          vy: -(4 + Math.random() * 10), fase: Math.random() * 6.28, amp: 6 + Math.random() * 16,
+          tono: Math.random() < .7 ? '231,160,82' : '201,104,52'
+        });
+      }
+    };
+    var medir = function () {
+      var r = hero.getBoundingClientRect();
+      dpr = Math.min(1.5, window.devicePixelRatio || 1);
+      ancho = r.width; alto = r.height;
+      lienzo.width = Math.round(ancho * dpr); lienzo.height = Math.round(alto * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      crearLuces();
+    };
+    var pintarLuces = function (t) {
+      idLuces = null;
+      if (!enMarcha) { tPrevio = null; return; }
+      var dt = tPrevio === null ? 0 : Math.min(64, t - tPrevio) / 1000;
+      tPrevio = t;
+      ctx.clearRect(0, 0, ancho, alto);
+      ctx.globalCompositeOperation = 'lighter';
+      luces.forEach(function (l) {
+        l.y += l.vy * dt; l.fase += dt * .25;
+        if (l.y < -l.r * 2) { l.y = alto + l.r * 2; l.x = Math.random() * ancho; }
+        var x = l.x + Math.sin(l.fase) * l.amp;
+        var g = ctx.createRadialGradient(x, l.y, 0, x, l.y, l.r);
+        g.addColorStop(0, 'rgba(' + l.tono + ',' + l.a + ')');
+        g.addColorStop(.55, 'rgba(' + l.tono + ',' + (l.a * .45) + ')');
+        g.addColorStop(1, 'rgba(' + l.tono + ',0)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(x, l.y, l.r, 0, 6.2832); ctx.fill();
+      });
+      idLuces = requestAnimationFrame(pintarLuces);
+    };
+    var activarLuces = function (si) {
+      enMarcha = si && !document.hidden;
+      if (enMarcha && idLuces === null) idLuces = requestAnimationFrame(pintarLuces);
+    };
+    medir();
+    lienzo.classList.add('activa');
+    var heroVisible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; activarLuces(heroVisible); }).observe(hero);
+    else activarLuces(true);
+    document.addEventListener('visibilitychange', function () { activarLuces(heroVisible); });
+    var reMedir = null;
+    window.addEventListener('resize', function () { clearTimeout(reMedir); reMedir = setTimeout(medir, 200); }, { passive: true });
   }
 
   /* ---------- Año del pie ---------- */

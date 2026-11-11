@@ -1,0 +1,7 @@
+# Archivos de trabajo que no se publican
+.impeccable/
+herramientas/
+PRODUCT.md
+DESIGN.md
+README.md
+assets/img/**/*.json
