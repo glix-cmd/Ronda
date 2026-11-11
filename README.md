@@ -1,10 +1,12 @@
-# Ronda · prototipo de web comercial
+# Ronda · prototipo de web comercial · variante RondaTomasa
+
+> **Esta carpeta es la variante «RondaTomasa»**: el mismo contenido y el mismo formulario que la versión nocturna (`ronda-web`), con el estilo de cartel hecho a mano tomado de la web de La Negra Tomasa de Sol (solo el estilo: ni su logotipo, ni sus textos, ni sus fotos).
 
 Prototipo de web comercial de una empresa nueva de Madrid que lleva **especialistas de venta asistida en sala** a restaurantes, bares y otros locales de hostelería en franjas de alta demanda (de 3 a 6 horas).
 
 > **«Ronda» es un nombre provisional.** Hace la ronda por las mesas y ofrece «otra ronda» sin prometer resultados. Antes de usarlo, comprueba en la OEPM que la marca está libre y que el dominio está disponible.
 
-Es un sitio estático (HTML, CSS y JavaScript sin dependencias) con la misma arquitectura que `yassin-barber-web`. Está preparado para publicarse en Vercel. El diseño («sala de noche»: editorial nocturno, oscuro por defecto con variante clara) está documentado en `DESIGN.md`; los datos del producto, en `PRODUCT.md`.
+Es un sitio estático (HTML, CSS y JavaScript sin dependencias) con la misma arquitectura que `yassin-barber-web`. Está preparado para publicarse en Vercel. El diseño («El cartel de sala»: collage hecho a mano, amarillo por defecto con variante noche) está documentado en `DESIGN.md`; los datos del producto, en `PRODUCT.md`.
 
 > **Dónde están los archivos.** El proyecto GLIX de claude.ai solo guarda archivos de texto (`claude/ronda-web/`). Las fuentes `.woff2`, las imágenes (`.avif`, `.webp`, `.png`) y `favicon.ico` van en el paquete completo `ronda-web.zip`, que es el que hay que subir a Vercel.
 
@@ -18,14 +20,15 @@ privacidad.html     Política de privacidad (RGPD / LOPDGDD). Datos y base jurí
 cookies.html        Política de cookies: la web no usa cookies; solo guarda el tema si lo eliges
 robots.txt, sitemap.xml, favicon.svg, favicon.ico, apple-touch-icon.png, site.webmanifest
 vercel.json         URLs limpias, cabeceras de seguridad (CSP, HSTS…), caché y «noindex» de prototipo
-assets/css/site.css Tokens (oscuro por defecto y variante clara) y componentes
+assets/css/site.css Tokens por bloque (amarillo por defecto y variante noche) y componentes
 assets/js/tema.js   Aplica el tema antes de pintar (evita parpadeo)
-assets/js/site.js   Menú a pantalla completa, tema, animaciones, luces de la portada, plano animado, formulario, WhatsApp, redes
+assets/js/site.js   Menú (en línea y desplegable en móvil), tema, animaciones, plano animado, formulario, WhatsApp, redes
 assets/js/config.js ← AQUÍ se configuran el formulario, WhatsApp y las redes
 assets/img/         Imagen para redes (1200×630) e iconos de la app
-assets/img/atmosfera/  Atmósferas de sala generadas (AVIF y WebP, 2 tamaños) con su origen en un .json al lado
-assets/fonts/       Bodoni Moda (titulares) y Hanken Grotesk (texto) alojadas aquí (sin Google Fonts), licencia OFL
-herramientas/       Generador de las atmósferas (placas.html + render-placas.js). No se publica
+assets/img/textura/ Texturas de pared y papel (WebP en gris que se multiplican sobre cada color) con su origen en un .json al lado
+assets/fonts/       Just Me Again Down Here (titulares) y Lato (texto) alojadas aquí (sin Google Fonts), licencia OFL
+herramientas/       Generador de las texturas (texturas.py). No se publica
+(ilustraciones)     Los dibujos (copa, caña, panera, café, flan, estrellas…) son SVG dentro de index.html
 .vercelignore       Deja fuera de la publicación los archivos de trabajo
 ```
 
@@ -44,7 +47,7 @@ herramientas/       Generador de las atmósferas (placas.html + render-placas.js
 | Proceso de selección y formación del equipo | Pendiente |
 | Opiniones | Maqueta vacía: no hay testimonios ni clientes inventados |
 | Semana tipo y «Mesa 6» | Ejemplos ilustrativos, rotulados como tales |
-| Imágenes de sala, barra, mesa y retrato | Atmósferas generadas por código (velas y luces desenfocadas, sin personas reales). Rotuladas «Atmósfera generada · foto real pendiente»: sustitúyelas por fotos propias con el mismo encuadre |
+| Fotos | No hay. El collage está dibujado a mano en SVG; los huecos de foto del equipo y del retrato de un local están rotulados «foto real pendiente» |
 
 Todo lo pendiente se ve en la web con la marca ámbar (`.pendiente`), la etiqueta «Pendiente» o los rótulos «Prototipo», «Ejemplo» e «Ilustración».
 
@@ -62,7 +65,7 @@ Todo lo pendiente se ve en la web con la marca ámbar (`.pendiente`), la etiquet
 4. **Formulario (Web3Forms).** Crea una clave en https://web3forms.com con el correo de la empresa y pégala en `web3formsKey` de `assets/js/config.js`. Sin clave, el formulario valida pero **no envía** y avisa de que está en modo demostración. Protección antispam incluida: casilla trampa invisible, tiempo mínimo de rellenado y el `botcheck` de Web3Forms. Si llega spam, activa el hCaptcha de Web3Forms y añade su dominio a la CSP de `vercel.json`.
 5. **WhatsApp y redes.** Rellena `whatsapp` (solo dígitos, con 34 delante) y las URL de las redes en `config.js`.
 6. **Textos legales.** Completa lo marcado como pendiente en `aviso-legal.html`, `privacidad.html`, `cookies.html` y en la información básica del formulario (`index.html`), y haz que lo revise un profesional. Si se añaden analítica, mapas o vídeos incrustados, hará falta un sistema de consentimiento de cookies.
-7. **Fotos.** Sustituye las atmósferas de `assets/img/atmosfera/` por fotografías reales (con permiso de las personas que salgan) en los mismos tamaños y formatos, y quita los rótulos «Atmósfera generada».
+7. **Fotos.** Cuando haya fotos reales (con permiso de las personas que salgan), colócalas en los huecos de polaroid del equipo y de opiniones, con el mismo tratamiento de recorte.
 8. **Marca.** Comprueba la disponibilidad de «Ronda» en la OEPM y del dominio antes de invertir en ellos.
 
 ## Publicar en Vercel

@@ -41,8 +41,10 @@ No es un camarero más ni un vendedor que presiona. Es venta asistida: atenta, �
 - Nombre provisional «Ronda» y logotipo de aro con punto (la ronda por las mesas). Textos en español, con el tono de la web actual.
 - Llamada principal única: «Solicitar propuesta». WhatsApp es un canal alternativo para la misma solicitud.
 - Puesto: «especialista de venta asistida en sala».
-- Referencia visual vinculante (noviembre de 2026): la estética del concepto «The Nocturne» (editorial de lujo, nocturna y cinematográfica). Se toma **solo el estilo**, sin su marca, sus textos ni su testimonio.
-- Tema oscuro por defecto, con una variante clara elegible.
+- Esta carpeta es la **variante «RondaTomasa»** (noviembre de 2026). Referencia visual vinculante: el lenguaje de cartel cubano hecho a mano de la web de La Negra Tomasa de Sol (collage, rotulador, amarillo y negro con rosa coral y turquesa, titulares manuscritos en Just Me Again Down Here y texto en Lato). Se toma **solo el estilo**: ni su logotipo, ni sus textos, ni sus fotos, ni referencias a Cuba o a la música que no tienen que ver con Ronda.
+- La variante nocturna («The Nocturne») vive aparte en `ronda-web`; esta no la sustituye.
+- Tema amarillo (claro) por defecto, con una variante noche (negro con amarillo) elegible.
+- Imágenes: collage dibujado propio (SVG de rotulador y texturas generadas), sin fotos; los huecos de foto real se rotulan como pendientes.
 
 ## Evidence on Hand
 

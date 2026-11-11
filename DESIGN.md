@@ -1,290 +1,263 @@
 ---
-name: Ronda (nombre provisional)
-description: Venta asistida en sala para hostelería en Madrid. Fotograma nocturno de una sala en hora punta, a la luz de las velas.
+name: Ronda (nombre provisional) · RondaTomasa
+description: Venta asistida en sala para hostelería en Madrid, contada como un cartel de sala hecho a mano.
 colors:
-  noche: "#090807"
-  noche-superficie: "#141210"
-  noche-superficie-2: "#1C1916"
-  pergamino: "#F4F0E9"
-  ceniza: "#A8A098"
-  ceniza-tenue: "#8E867D"
-  champan: "#E6CFAE"
-  ambar: "#D79543"
-  brasa: "#A9471F"
-  filete-noche: "rgba(235,225,212,0.18)"
-  filete-noche-ui: "rgba(235,225,212,0.46)"
-  papel: "#F4F0E9"
-  papel-superficie: "#EBE5DB"
-  papel-superficie-2: "#E2DACD"
-  tinta: "#15120F"
-  tinta-2: "#57504A"
-  tinta-3: "#645C54"
-  ambar-papel: "#B8732C"
-  ambar-papel-texto: "#8C4A12"
-  filete-papel: "rgba(21,18,15,0.16)"
-  filete-papel-ui: "rgba(21,18,15,0.52)"
-  error-noche: "#E58A6C"
-  error-papel: "#A3341A"
-  ok-noche: "#A9C792"
-  ok-papel: "#3D6B2A"
-  pendiente-noche: "#E5B270"
-  pendiente-papel: "#7A3F0E"
+  amarillo: "#FDF250"
+  amarillo-portada: "#FFE94D"
+  amarillo-boton: "#FFDA30"
+  negro: "#000000"
+  blanco: "#FFFFFF"
+  rosa-coral: "#F17F96"
+  turquesa: "#159C9F"
+  rojo-rotulador: "#C83A2D"
+  rojo-texto: "#A3261B"
+  gris-texto: "#3D3D3D"
+  noche-pared: "#0F0F0D"
+  noche-rosa: "#2B1219"
+  noche-blanco: "#171716"
+  noche-turquesa: "#0B2D2F"
+  rosa-claro-noche: "#F7A3B4"
+  pan: "#F2B260"
+  cafe: "#4A2C1F"
 typography:
   display:
-    fontFamily: "Bodoni Moda, Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(2.7rem, 6.2vw, 5.5rem)"
+    fontFamily: "Just Me Again Down Here, Segoe Print, Bradley Hand, cursive"
+    fontSize: "clamp(3.2rem, 7.4vw, 6rem)"
+    fontWeight: 400
+    lineHeight: 0.92
+  headline:
+    fontFamily: "Just Me Again Down Here, Segoe Print, Bradley Hand, cursive"
+    fontSize: "clamp(2.8rem, 6vw, 4.4rem)"
     fontWeight: 400
     lineHeight: 0.98
-    letterSpacing: "-0.022em"
-  headline:
-    fontFamily: "Bodoni Moda, Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(2.3rem, 4.8vw, 4.25rem)"
+  mano:
+    fontFamily: "Just Me Again Down Here, Segoe Print, Bradley Hand, cursive"
+    fontSize: "clamp(1.7rem, 2.4vw, 2.1rem)"
     fontWeight: 400
-    lineHeight: 1.04
-    letterSpacing: "-0.015em"
+    lineHeight: 1.05
   title:
-    fontFamily: "Bodoni Moda, Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(1.3rem, 1.5vw, 1.55rem)"
-    fontWeight: 400
-    lineHeight: 1.04
-  quote:
-    fontFamily: "Bodoni Moda, Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(1.35rem, 1.9vw, 1.7rem)"
-    fontWeight: 400
+    fontFamily: "Lato, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.2rem"
+    fontWeight: 900
     lineHeight: 1.25
   body:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Lato, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.65
-  body-lg:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.1875rem"
-    fontWeight: 400
-    lineHeight: 1.6
   label:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 500
+    fontFamily: "Lato, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.78rem"
+    fontWeight: 900
     lineHeight: 1.2
-    letterSpacing: "0.16em"
+    letterSpacing: "0.12em"
 rounded:
-  none: "0px"
-  hairline: "2px"
-  round: "50%"
-  pill: "999px"
+  a-mano: "255px 18px 225px 18px / 18px 225px 18px 255px"
+  a-mano-s: "14px 4px 16px 5px / 5px 16px 4px 14px"
+  papel: "3px 6px 4px 8px"
+  mancha: "46px 22px 52px 28px / 26px 48px 22px 54px"
 spacing:
-  gutter: "clamp(20px, 5vw, 72px)"
+  gutter: "clamp(20px, 5vw, 64px)"
   column-gap: "clamp(16px, 2.4vw, 32px)"
-  section: "clamp(96px, 12vw, 176px)"
-  container: "1360px"
+  section: "clamp(88px, 11vw, 150px)"
+  container: "1280px"
   header: "76px"
 components:
   cta:
-    textColor: "{colors.pergamino}"
+    backgroundColor: "{colors.negro}"
+    textColor: "{colors.amarillo-boton}"
     typography: "{typography.label}"
-    height: "48px"
-  cta-circle:
-    rounded: "{rounded.round}"
-    size: "52px"
-  cta-circle-hover:
-    backgroundColor: "{colors.ambar}"
-    textColor: "{colors.noche}"
-    rounded: "{rounded.round}"
-    size: "52px"
-  icon-button:
-    textColor: "{colors.pergamino}"
-    rounded: "{rounded.round}"
-    size: "44px"
-  input-underline:
-    textColor: "{colors.pergamino}"
-    rounded: "{rounded.none}"
-    padding: "10px 0 11px"
-    height: "46px"
-  option-chip:
-    textColor: "{colors.ceniza}"
-    rounded: "{rounded.none}"
-    padding: "10px 14px"
+    rounded: "{rounded.a-mano}"
+    padding: "12px 22px 12px 24px"
+    height: "52px"
+  cta-sobre-oscuro:
+    backgroundColor: "{colors.amarillo-boton}"
+    textColor: "{colors.negro}"
+    rounded: "{rounded.a-mano}"
+    padding: "12px 22px 12px 24px"
+  pegatina:
+    backgroundColor: "{colors.blanco}"
+    textColor: "{colors.negro}"
+    rounded: "{rounded.a-mano-s}"
+    padding: "9px 16px 11px"
+  recorte:
+    backgroundColor: "{colors.blanco}"
+    textColor: "{colors.negro}"
+    rounded: "{rounded.a-mano-s}"
+    padding: "10px 10px 8px"
+  comanda:
+    backgroundColor: "{colors.blanco}"
+    textColor: "{colors.negro}"
+    padding: "22px 22px 28px"
+  formulario:
+    backgroundColor: "{colors.amarillo}"
+    textColor: "{colors.negro}"
+    rounded: "{rounded.mancha}"
+    padding: "clamp(26px, 3.2vw, 46px)"
+  opcion:
+    backgroundColor: "{colors.blanco}"
+    textColor: "{colors.negro}"
+    rounded: "{rounded.a-mano-s}"
     height: "44px"
-  option-chip-selected:
-    textColor: "{colors.pergamino}"
-    rounded: "{rounded.none}"
-    padding: "10px 14px"
-  tag-pendiente:
-    textColor: "{colors.pendiente-noche}"
-    typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: "4px 8px"
-  panel:
-    backgroundColor: "{colors.noche-superficie}"
-    textColor: "{colors.pergamino}"
-    rounded: "{rounded.none}"
-    padding: "clamp(24px, 3.2vw, 48px)"
-  whatsapp-pill:
-    backgroundColor: "{colors.noche-superficie}"
-    textColor: "{colors.pergamino}"
-    rounded: "{rounded.pill}"
-    height: "46px"
+  opcion-marcada:
+    backgroundColor: "{colors.negro}"
+    textColor: "{colors.blanco}"
+    rounded: "{rounded.a-mano-s}"
+    height: "44px"
 ---
 
-# Design System: Ronda (nombre provisional)
+# Design System: Ronda (nombre provisional) · RondaTomasa
 
-<!-- Fusionado en noviembre de 2026: el mundo «La última ronda» (rediseño nocturno, referencia de estilo «The Nocturne») sustituye al de la v4 (vermut, Anton y Plus Jakarta Sans). Se conservan de la v4 la acción única, la honestidad de prototipo y los criterios de movimiento. -->
+<!-- Variante aparte (noviembre de 2026). Referencia de estilo fijada por el usuario: el cartel cubano hecho a mano de la web de La Negra Tomasa de Sol; solo el estilo, sin su logotipo, textos, fotos ni temática. La variante nocturna sigue en ronda-web. -->
 
 ## Overview
 
-**Creative North Star: "La última ronda"**
+**Creative North Star: "El cartel de sala"**
 
-La web es un fotograma de una sala llena a la hora en que alguien pasa por las mesas. Todo ocurre de noche: fondo negro cálido, luces de velas desenfocadas que suben desde el negro y una serif de trazo muy fino que se lee como el rótulo de un local con oficio. El ámbar es la única luz: la llama, la acción y lo que está pendiente. Todo lo demás es pergamino sobre negro, separado por filetes de un píxel.
+La web parece el cartel que alguien del local pega en la pared antes del servicio, escrito con rotulador y lleno de recortes. Los bloques de color son planos e intensos: amarillo, rosa coral, blanco, turquesa y negro. Pasan de uno a otro con bordes de papel rasgado y se apoyan en una textura de pared pintada o de papel. Encima van los papeles: comandas de bloc, recortes con cinta adhesiva, pegatinas y una polaroid sin foto. Todo lo dibujado se traza con rotulador negro y se rodea o señala en rojo.
 
-La página alterna planos a sangre (portada, interludio «¿Otra ronda?», contacto) con secciones editoriales asimétricas sobre negro o sobre la superficie un punto más clara. Hay mucho aire, titulares grandes, y los datos, la navegación y las etiquetas son compactos y en mayúsculas espaciadas. El tema oscuro es el predeterminado. La variante clara cambia el negro por papel cálido en las secciones de texto, pero las fotos, el menú, la banda del equipo, el contacto y el pie siguen de noche.
+La jerarquía nace del contraste entre una letra manuscrita grande y expresiva y un texto funcional pequeño en Lato, claro y sobrio. El tono es festivo pero útil: el collage acompaña el contenido sin taparlo. El formulario, los datos y las reglas se leen igual de bien que en una web sobria.
 
-De la v4 se mantiene la honestidad de prototipo: todo dato ficticio o pendiente se marca a la vista, las imágenes son atmósferas generadas y se rotulan como tales, y no hay personas, clientes ni opiniones inventadas. Lo que se rechaza explícitamente es el héroe SaaS con tarjetas, la fila de cuatro iconos con titular y texto, y el póster del vermut de la v4.
+La variante noche apaga las paredes (negro, vino, verde oscuro) y deja los papeles como papeles: los recortes, las comandas, las pegatinas y el formulario siguen siendo claros. Lo que se rechaza explícitamente es la plantilla SaaS, el lujo nocturno de la otra variante y cualquier tópico cubano o musical que no tenga que ver con Ronda.
 
 **Key Characteristics:**
-- Negro cálido (#090807) con planos de velas y luz desenfocada bajo velos negros.
-- Bodoni Moda 400 para titulares y frases; Hanken Grotesk para texto, datos y etiquetas.
-- El ámbar es la única luz y la única acción.
-- Filetes finos de bajo contraste en lugar de tarjetas, sombras y radios.
-- Una sola llamada a la acción, «Solicitar propuesta», con texto discreto en mayúsculas y un círculo con flecha.
-- Movimiento lento y cinematográfico, y nada si el usuario pide movimiento reducido.
+- Bloques planos de amarillo, rosa coral, turquesa, blanco y negro con borde de papel rasgado.
+- Titulares en Just Me Again Down Here; texto, datos y botones en Lato.
+- Collage dibujado a mano en SVG: copa, caña, panera, café, flan, estrellas, flechas, sellos.
+- Rojo de rotulador para rodear, subrayar y marcar lo pendiente.
+- Botón negro con borde irregular y flecha a mano; una sola llamada a la acción.
+- Lo dibujado se traza solo al aparecer; los papeles se enderezan al pasar el ratón.
 
 ## Colors
 
-Una paleta de noche con una sola luz cálida. La variante de papel usa los mismos papeles con valores oscurecidos para que el texto llegue al contraste AA.
+Una paleta de cartel: tres colores de pared, el negro de la tinta y un rojo de rotulador.
 
 ### Primary
-- **Ámbar de vela** (ambar): la única luz y la única acción. Se usa en el relleno del círculo de la llamada a la acción al pasar el ratón, la cursiva del h1, el punto del logotipo, la ruta y el especialista del plano, las mesas activas, la barra de progreso, el anillo de «volver arriba», el foco de teclado, las casillas marcadas y las franjas reforzadas de la semana. Como texto en noche llega a 6,9:1 sobre la superficie.
-- **Ámbar de papel** (ambar-papel / ambar-papel-texto): el mismo papel en la variante clara. El tono más oscuro (#8C4A12, 5,9:1) es el que se usa para texto.
+- **Amarillo cartel** (amarillo, amarillo-portada): la pared por defecto de la portada, de «En sala» y de «Opiniones», la cabecera fija y el panel del formulario.
+- **Amarillo botón** (amarillo-boton): el texto del botón negro, el relleno del botón sobre fondos oscuros, la pegatina de WhatsApp y las ilustraciones (cerveza, panera, flan).
 
 ### Secondary
-- **Brasa** (brasa): naranja tostado para los rescoldos. Solo aparece en brillos de fondo (la banda del equipo y el menú) y nunca como texto sobre negro.
+- **Rosa coral** (rosa-coral): la pared de «La oportunidad» y «El equipo», la cinta adhesiva, las sillas del plano y el rotulador de la variante noche.
+- **Turquesa** (turquesa): la pared del contacto, la cinta adhesiva y la taza de café. Sobre turquesa, el texto siempre es negro (el blanco no llega a AA).
+
+### Tertiary
+- **Rojo rotulador** (rojo-rotulador): óvalos, subrayados, círculos de las horas, la ruta del plano, los números de los pasos y las marcas de visto. Solo para trazos y textos grandes.
+- **Rojo texto** (rojo-texto): la versión legible del rojo para textos pequeños (etiquetas de mesa, errores, «Pendiente»), con 6,3:1 sobre amarillo.
 
 ### Neutral
-- **Noche** (noche): fondo de página y de todo plano a sangre.
-- **Superficie de noche** y **Superficie 2** (noche-superficie, noche-superficie-2): secciones alternas, ficha de la mesa 6, plano, panel del formulario y celdas vacías.
-- **Pergamino** (pergamino): texto principal y titulares.
-- **Ceniza** (ceniza): texto secundario, párrafos y descripciones (7,2:1 sobre la superficie).
-- **Ceniza tenue** (ceniza-tenue): etiquetas, horas y notas (5,2:1 sobre la superficie).
-- **Champán** (champan): reservado para un acento en cursiva dentro de titulares o en la sección activa del menú.
-- **Filete** (filete-noche): separadores y bordes de paneles. **Filete de interfaz** (filete-noche-ui): campos, casillas y círculos de botón, al menos 3:1.
-- **Papel, tinta y sus filetes** (papel, papel-superficie, papel-superficie-2, tinta, tinta-2, tinta-3, filete-papel, filete-papel-ui): los mismos papeles en la variante clara.
-- **Estados**: error (error-noche / error-papel), correcto (ok-noche / ok-papel) y pendiente (pendiente-noche / pendiente-papel), siempre acompañados de texto.
+- **Negro tinta** (negro): texto, trazos, bordes, botón principal, interludio y pie.
+- **Blanco papel** (blanco): recortes, comandas, pegatinas, polaroids, la pared de «Cómo funciona», «Ventajas» y «Preguntas», y el texto sobre negro.
+- **Gris texto** (gris-texto): texto secundario sobre papel blanco.
+- **Paredes de noche** (noche-pared, noche-rosa, noche-blanco, noche-turquesa): los mismos bloques en la variante noche, con texto blanco y titulares en amarillo o rosa.
+- **Tonos de ilustración** (pan, cafe): solo dentro de los dibujos.
 
 ### Named Rules
-**The Una Sola Luz Rule.** El ámbar es la única luz de la página. Si algo nuevo necesita destacar y no es una acción, un estado o la luz de una vela, usa pergamino, cursiva o tamaño, nunca otro color.
+**The Papel Es Papel Rule.** Todo lo que es un papel pegado (recorte, comanda, pegatina, polaroid, bloc, formulario, página legal) conserva su color claro y su tinta negra también en la variante noche. Solo cambian las paredes.
 
-**The Noche Fija Rule.** Las fotos de ambiente, el menú, la banda del equipo, el contacto, el pie y la barra móvil son siempre de noche, también en la variante clara. Sus tokens se fuerzan con los de noche; el panel del formulario es lo único que vuelve a papel en la variante clara.
+**The Rotulador Rojo Rule.** El rojo sirve para rodear, subrayar, señalar o marcar lo pendiente. Nunca rellena un bloque ni se usa para texto corrido.
 
-**The Pendiente a la Vista Rule.** Todo dato ficticio o sin definir lleva su marca ámbar (resaltado, etiqueta «Pendiente» con filete, o rótulo «Ejemplo», «Ilustración» o «Atmósfera generada»). Esto viene de la v4 y no se negocia.
+**The Pendiente a la Vista Rule.** Todo dato ficticio o sin definir lleva su marca: un resaltado, la etiqueta «Pendiente» o los rótulos «Ejemplo», «Ilustración» o «foto real pendiente». Viene de las versiones anteriores y no se negocia.
 
 ## Typography
 
-**Display Font:** Bodoni Moda (con Bodoni 72, Didot, Times New Roman), con redonda y cursiva, variable 400–900 y usada siempre a 400.
-**Body Font:** Hanken Grotesk (con ui-sans-serif y system-ui), variable 100–900.
-**Label Font:** Hanken Grotesk 500 en mayúsculas espaciadas.
+**Display Font:** Just Me Again Down Here (con Segoe Print y Bradley Hand), a 400.
+**Body Font:** Lato (con ui-sans-serif y system-ui), a 400, 700 y 900, más cursiva 400.
 
-**Character:** Una didona de altísimo contraste y trazo de pelo, como el rótulo de una carta de sala buena, contra una grotesca limpia y tranquila que lleva los datos sin hacer ruido. Las dos fuentes se alojan en el sitio con licencia OFL.
+**Character:** Una letra de rotulador con mucha personalidad contra una sans humanista que no hace ruido. Las dos son libres (OFL) y se alojan en el propio sitio.
 
 ### Hierarchy
-- **Display** (400, clamp 2.7–5.5rem, 0.98): solo el h1 de portada, centrado y en dos líneas en escritorio. «haciendo la ronda» va en cursiva ámbar.
-- **Headline** (400, clamp 2.3–4.25rem, 1.04): los h2 de sección, en redonda y sin cursiva. En columnas estrechas, como la de preguntas, el tamaño baja a 3.75rem como máximo.
-- **Title** (400, clamp 1.3–1.55rem): los h3 de pasos, reglas, ventajas y la ficha de la mesa.
-- **Quote** (400 cursiva, clamp 1.35–1.7rem, 1.25): lo que dice el especialista en cada comanda, el remate de «La oportunidad», las preguntas del FAQ (en redonda) y los bocadillos del plano.
-- **Body** (400, 1.0625rem, 1.65): texto corrido en ceniza, con unos 36rem de ancho máximo en las entradillas.
-- **Label** (500, 0.75rem, 0.14–0.2em, mayúsculas): navegación, botones, datos de la portada, encabezados de comanda, campos del formulario y notas de atmósfera.
+- **Display** (manuscrita, clamp 3.2–6rem, 0.92): el h1 de la portada, con «la ronda» rodeada a rotulador.
+- **Headline** (manuscrita, clamp 2.8–4.4rem, 0.98): los h2 de sección y el «¿Otra ronda?» del interludio.
+- **Mano** (manuscrita, clamp 1.7–2.1rem): lo que dice el especialista en las comandas, las horas del bloc, las pegatinas, las notas («o pídela por WhatsApp») y los rasgos del equipo.
+- **Title** (Lato 900, 1.2rem): los h3 de pasos, reglas y ventajas, y las preguntas frecuentes (Lato 700).
+- **Body** (Lato 400, 1.0625rem, 1.65): todo el texto corrido.
+- **Label** (Lato 900, 0.78rem, 0.12em, mayúsculas): botones, navegación móvil, etiquetas de comanda y de formulario, la barra de prototipo.
 
 ### Named Rules
-**The Cursiva Escasa Rule.** La cursiva de titular es un recurso de la portada (h1) y del interludio «¿Otra ronda?». En los h2 no se usa: repetida en cada sección se convierte en tic.
+**The Abre Bien Rule.** Los signos de apertura «¿» y «¡» de la manuscrita son diminutos y se leen como una «s». Se toman de Lato mediante una `@font-face` con `unicode-range` U+00A1 y U+00BF dentro de la misma familia.
 
-**The Un Solo Peso Rule.** Bodoni Moda se usa siempre a 400. La jerarquía la dan el tamaño, la cursiva y el aire, nunca la negrita.
+**The Mano Para Hablar Rule.** La manuscrita es para titulares y para lo que se dice en voz alta (preguntas, notas, nombres). Las instrucciones, los datos y el texto legal van siempre en Lato.
 
 ## Layout
 
-La rejilla es de 12 columnas, con un contenedor de 1360px, márgenes laterales de clamp(20px, 5vw, 72px) y un espacio entre columnas de clamp(16px, 2.4vw, 32px). Las secciones tienen clamp(96px, 12vw, 176px) de aire arriba y abajo. La composición es editorial y asimétrica:
-- titular en las columnas 1–9 y texto desplazado a 7–12;
-- cabeceras fijas (sticky) en 1–5 junto a listas en 7–12;
-- plano fijo en 7fr junto a la columna de comandas y reglas en 5fr;
-- retrato vertical en 8–11 frente al texto en 1–6.
+La rejilla es de 12 columnas, con un contenedor de 1280px, márgenes de clamp(20px, 5vw, 64px) y secciones de clamp(88px, 11vw, 150px) de aire. La composición es de cartel:
+- en la portada, el titular va centrado y cuatro recortes se clavan en las esquinas;
+- el resto de secciones son editoriales y asimétricas, con titular a un lado y papeles al otro;
+- en «En sala», el plano queda fijo junto a la columna de comandas y reglas.
 
-La cabecera mide 76px (64px en móvil) y se superpone a la portada, que ocupa toda la pantalla. Por debajo de 1080px las rejillas pasan a una columna y lo fijo deja de serlo. Por debajo de 760px:
-- los datos de la portada se apilan en filas con filete;
-- el formulario pasa a una columna;
-- la llamada de la cabecera queda solo como círculo (mantiene su nombre accesible);
-- aparece una barra fija abajo con «Solicitar propuesta» y WhatsApp, que se oculta en la portada y en el contacto.
+La cabecera mide 76px (64px en móvil) y es fija y amarilla. Por debajo de 1080px:
+- la navegación pasa a un desplegable manuscrito, con velo oscuro detrás;
+- los recortes de la portada forman una fila bajo el titular;
+- todas las rejillas pasan a una columna.
 
-**The Aire Antes que Caja Rule.** Las agrupaciones se hacen con espacio y filetes horizontales, no con tarjetas. Una caja con fondo solo se permite cuando el contenido es un objeto: la ficha de la mesa 6, el plano, la semana de ejemplo o el panel del formulario.
+Por debajo de 760px:
+- desaparecen el botón de la cabecera y el sello;
+- aparece la barra fija inferior con el botón y WhatsApp;
+- el plano muestra una clave fija o un rótulo vivo con lo que se dice en cada parada.
+
+**The Borde Rasgado Rule.** Las secciones no se separan con líneas rectas: cada bloque entra con un borde de papel rasgado de 18px de su propio color, hecho con una máscara SVG que se repite.
 
 ## Elevation & Depth
 
-El sistema es plano y no usa sombras. La profundidad la dan las capas tonales (noche, superficie y superficie 2), los velos negros sobre las fotos a sangre y el movimiento: un paralaje lento de las fotos al hacer scroll, una escala muy lenta en la portada y luces cálidas en suspensión dibujadas en un lienzo. Las superposiciones son pocas y deliberadas: la cabecera sobre la portada, el panel translúcido del formulario sobre la mesa con velas y el marco de filete desplazado detrás del retrato.
+No hay sombras. La profundidad sale del collage: papeles girados unos grados, cinta adhesiva semitransparente que los sujeta, bordes rasgados que pisan el bloque anterior, una mancha amarilla con goterones detrás del formulario y un ligero desplazamiento de los recortes con el ratón y de la textura del contacto al hacer scroll.
 
-**The Sin Sombras Rule.** No se usa `box-shadow` para elevar. Si algo necesita separarse, se le da un filete, un cambio de superficie o aire.
+**The Sin Sombra Rule.** Nada flota con `box-shadow`. Si algo tiene que destacar, se gira, se pega con cinta o se recorta con borde negro.
 
 ## Shapes
 
-Las formas son de ángulo recto: paneles, campos, casillas, opciones, etiquetas y la semana son cuadrados (0px). Solo son redondos los elementos que representan un punto o un gesto: el círculo de la llamada a la acción (52px), los botones de icono (44px), las redes (36px), «volver arriba», el punto del logotipo, las mesas del plano y la píldora flotante de WhatsApp. El suelo y la barra del plano llevan un redondeo mínimo (2–4px en el SVG). Los bordes son siempre de 1px.
+Las formas son de mano alzada. Los botones y las pegatinas usan radios asimétricos que imitan un borde dibujado (a-mano y a-mano-s). Los papeles tienen esquinas casi rectas e irregulares, y las comandas acaban en zigzag de papel arrancado. El formulario es una mancha de radios desiguales sobre una salpicadura. Los trazos SVG pasan por un filtro de rotulador (`feTurbulence` + `feDisplacementMap`, escala 2.6) que les quita la regularidad. Los bordes son de 2 a 2.5px en negro.
 
 ## Components
 
 ### Buttons
-- **Llamada principal («Solicitar propuesta»):** texto en mayúsculas espaciadas (label, 0.2em) con un subrayado que ocupa el 30 % del ancho, seguido de un círculo de 52px con filete de interfaz y una flecha de trazo 1.4. Se repite en la cabecera (círculo de 42px), la portada, los pasos, el equipo, las preguntas, el formulario y la barra móvil.
-- **Hover / Focus:** el subrayado crece hasta el 100 %. El círculo se llena de ámbar desde el centro (escala 0→1 en 0.55s, curva de deceleración), la flecha pasa a negro y avanza 3px. Al pulsar, el círculo se queda al 94 %.
-- **Cargando:** la flecha desaparece y un arco ámbar gira dentro del círculo, con `aria-busy`. El texto vive en su propio elemento para que el círculo no se pierda al cambiarlo.
-- **Botones de icono (tema, cerrar aviso):** círculo de 44px con filete; el icono del tema gira 20° al pasar el ratón.
-- **Bloque móvil:** la misma llamada a todo el ancho con el círculo relleno de ámbar, junto a un botón cuadrado de WhatsApp.
+- **Shape:** borde irregular de mano (a-mano), con 2.5px de borde y un giro de -1.2°.
+- **Primary:** fondo negro y texto amarillo, Lato 900 en mayúsculas, con una flecha dibujada. Sobre paredes oscuras se invierte: fondo amarillo y texto negro.
+- **Hover / Focus:** el fondo se vacía, el texto toma el color de la pared, el botón gira a +0.8° y crece al 103 %, y la flecha avanza 5px. Al pulsar se queda al 96 %. Mientras envía, la flecha garabatea.
+- **Icon buttons:** cuadrados de 44px con borde a mano que giran al pasar el ratón.
 
 ### Chips
-- **Opciones de franja:** cuadradas, de 44px de alto, con filete y texto en ceniza. Al marcarlas, el filete pasa a ámbar, el texto a pergamino y el fondo toma un 10 % de ámbar.
-- **Etiqueta «Pendiente»:** mayúsculas con filete del color de pendiente y sin relleno. El resaltado de dato pendiente es un fondo ámbar al 14 % con el texto en el tono de pendiente.
+- **Pegatinas de datos:** papel blanco con borde negro, etiqueta en rojo de Lato y dato en manuscrita, giradas entre -3° y 1.6°.
+- **Opciones de franja:** papel blanco con borde a mano; al marcarlas pasan a fondo negro y texto blanco.
+- **Etiqueta «Pendiente»:** mayúsculas en rojo con borde a mano.
 
 ### Cards / Containers
-- **Corner Style:** recto (0px).
-- **Background:** superficie de noche (o papel-superficie en la variante clara) para la ficha de la mesa 6, el plano y la semana. El panel del formulario usa la superficie al 90 % de opacidad sobre la foto, con un desenfoque de 14px.
-- **Shadow Strategy:** ninguna (ver Elevation & Depth).
-- **Border:** filete de 1px.
-- **Internal Padding:** clamp(22px, 2.6vw, 36px) en las fichas y clamp(24px, 3.2vw, 48px) en el panel.
+- **Recortes:** papel blanco, borde negro, cinta rosa o turquesa, dibujo SVG y pregunta en manuscrita.
+- **Bloc (Mesa 6):** papel rayado con margen rosa; las horas con ocasión van rodeadas en rojo.
+- **Comandas:** papel blanco con cabecera de línea discontinua y final en zigzag, giradas ±1°.
+- **Polaroid:** marco blanco con trama de puntos y el rótulo «foto real pendiente».
 
 ### Inputs / Fields
-- **Style:** solo una línea inferior con filete de interfaz, sin fondo, sin radio y con 46px de alto. La etiqueta va encima, en mayúsculas espaciadas y en ceniza.
-- **Focus:** la línea pasa a ámbar y a 2px, y la etiqueta del campo se vuelve ámbar. El cursor de escritura es ámbar.
-- **Error / Disabled:** la línea y el mensaje se ponen en el color de error, el mensaje entra con un fundido y el campo hace una sacudida corta al enviar (no con movimiento reducido). Las casillas son cuadradas de 18px con una marca dibujada que aparece con escala. Hay un contador de caracteres que se vuelve ámbar cerca del límite. El modo demostración se anuncia en una caja de pendiente y nunca finge un envío.
+- **Style:** línea inferior negra de 2.5px sobre el amarillo del formulario, con la etiqueta en mayúsculas encima.
+- **Focus:** la línea pasa a rojo, el campo se aclara con un velo blanco y la etiqueta se vuelve roja.
+- **Error / Disabled:** línea y mensaje en rojo texto, con una sacudida corta al enviar. Casillas cuadradas a mano con visto negro sobre amarillo. El modo demostración se anuncia en una nota de papel con borde rojo discontinuo y nunca finge un envío.
 
 ### Navigation
-- **Cabecera:** barra fina en tres columnas: «MENÚ» con dos líneas a la izquierda, la marca centrada (aro con punto y «Ronda» en Bodoni) y, a la derecha, el botón de tema y la llamada principal. Sobre la portada es transparente y de noche; al bajar se vuelve sólida, con filete inferior y una barra de progreso ámbar de 1px. Al pasar el ratón, el punto del logotipo «hace la ronda» y gira 150° alrededor del aro.
-- **Menú:** ocupa toda la pantalla, siempre de noche, y se abre con una cortina (clip-path, 0.8s). Los enlaces son grandes en Bodoni y entran escalonados (60ms); al pasar el ratón se desplazan 14px y se vuelven ámbar. La sección actual va en cursiva champán y «Solicitar propuesta» en cursiva ámbar. Mientras está abierto, el resto de la página queda inerte y sin scroll; se cierra con Esc y el foco vuelve al botón.
-- **Pie:** siempre de noche. Marca grande, tres columnas con títulos en mayúsculas espaciadas y una fila legal con las redes en círculos pequeños de filete, que se muestran como «Redes pendientes» hasta configurarlas.
+- **Cabecera:** amarilla y fija, con la marca a la izquierda, los enlaces en Lato 700 y el tema y el botón a la derecha. Al bajar aparece un trazo ondulado como borde y una barra de progreso roja.
+- **Enlaces:** al pasar el ratón o al estar en su sección se dibuja debajo un garabato rojo.
+- **Desplegable móvil:** enlaces en manuscrita de 2.3rem separados por líneas discontinuas, con el botón al final. Mientras está abierto, el resto de la página queda inerte bajo un velo.
+- **Marca:** «Ronda» en manuscrita dentro de un lazo dibujado con un punto rojo, que se mueve al pasar el ratón.
 
 ### Plano de sala (signature)
-Un SVG del comedor visto desde arriba (barra, cocina y ocho mesas) con la ruta del especialista dibujada como una línea de puntos ámbar. Un punto ámbar recorre la ruta y se para en las mesas 2, 5, 6 y 8, que se iluminan mientras aparece un bocadillo en pergamino con la frase en Bodoni cursiva. La lista de comandas y la de reglas que lo acompañan usan los mismos números de mesa.
-- En escritorio el plano queda fijo junto a esas listas.
-- En móvil, la frase de cada parada se repite debajo a tamaño legible.
-- Sin animación, el plano muestra una clave fija de las cuatro mesas.
-- Solo se anima cuando está a la vista.
+Un mapa dibujado a rotulador: barra amarilla, cocina punteada, mesas blancas con sillas rosas y la ruta del especialista en rojo. El punto recorre la ruta y se para en las mesas 2, 5, 6 y 8, donde aparece un bocadillo manuscrito. La lista de comandas usa los mismos números de mesa.
 
-### Planos a sangre (signature)
-- **Portada:** placa de la sala de noche con velas en primer término. Entra desde negro con una escala de 1.12 a 1, luego «respira» muy despacio y tiene paralaje con el scroll y el ratón. Encima flotan luces cálidas en un lienzo.
-- **Interludio «¿Otra ronda?»:** placa de la barra, con la frase en Bodoni cursiva de hasta 6rem.
-- **Contacto:** placa de la mesa con velas, con paralaje.
-
-Todas llevan la nota «Atmósfera generada · foto real pendiente». Las placas se generan con código y van virando de brasa a ámbar, de modo que nada se queda en un gris neutro.
+### Interludio «¿Otra ronda?» (signature)
+Un bloque negro con la pregunta en amarillo, subrayada en rosa, estrellas y destellos, y una copa y una caña dibujadas en tiza que brindan al pasar el ratón.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** mantener una sola llamada a la acción, «Solicitar propuesta», con WhatsApp como canal alternativo para lo mismo. Viene de la v4.
-- **Do** usar el ámbar (#D79543) solo para luz, acción, foco y estados, y su tono de papel (#8C4A12) para texto en la variante clara.
-- **Do** separar con filetes de 1px (rgba(235,225,212,0.18) de noche) y con aire, antes que con cajas.
-- **Do** escribir los titulares en Bodoni Moda 400, en redonda, y reservar la cursiva para el h1 y el interludio.
-- **Do** animar solo `transform` y `opacity` (las excepciones son la altura del FAQ y el clip-path del menú). Las entradas usan la curva de deceleración `cubic-bezier(.22,1,.36,1)`, las salidas la de aceleración `cubic-bezier(.4,0,1,1)` y las cortinas `cubic-bezier(.65,0,.35,1)`. Todo debe poder interrumpirse y anularse con `prefers-reduced-motion`. Viene de la v4.
-- **Do** rotular toda imagen generada y todo dato pendiente donde se ve.
-- **Do** medir el contraste del texto sobre las fotos en el peor caso. Los velos de portada, interludio y contacto dejan todo el texto por encima de 5:1.
+- **Do** mantener una sola llamada a la acción, «Solicitar propuesta», con WhatsApp como canal alternativo para lo mismo.
+- **Do** usar texto negro sobre amarillo, rosa y turquesa. Sobre turquesa nunca uses texto blanco.
+- **Do** separar los bloques con el borde rasgado y apoyarlos en la textura de pared o de papel, que se multiplica sobre el color.
+- **Do** dibujar con trazos SVG de 2.4 a 3.4px, con el filtro de rotulador, y hacer que los trazos se dibujen solos al aparecer (`pathLength="1"`).
+- **Do** animar solo `transform`, `opacity` y el trazo, con la curva de entrada de fondo `cubic-bezier(0, .33, .07, 1.03)` para los recortes, y anular todo con `prefers-reduced-motion`.
+- **Do** rotular cada hueco de foto real como pendiente.
 
 ### Don't:
-- **Don't** usar sombras, degradados en el texto, vidrio decorativo ni bordes de acento de más de 1px.
-- **Don't** poner antetítulos (eyebrows) encima de los titulares, ni siquiera «Error 404». La cifra va dentro de la ilustración o en el texto.
-- **Don't** volver a la fila de cuatro iconos con titular y texto. Las reglas y los principios van como lista editorial con filetes.
-- **Don't** pasar las fotos de ambiente, el menú o el pie a papel en la variante clara.
-- **Don't** inventar personas, clientes, opiniones, cifras ni precios. Las opiniones siguen siendo un hueco con retrato de atmósfera rotulado.
-- **Don't** añadir un segundo color de acento ni usar la brasa (#A9471F) como texto sobre negro.
-- **Don't** redondear paneles, campos ni casillas.
+- **Don't** copiar el logotipo, los textos, las fotos ni la temática cubana o musical del referente. Del referente se toma solo el estilo.
+- **Don't** usar sombras ni vidrio, ni degradados en el texto.
+- **Don't** poner antetítulos encima de los titulares.
+- **Don't** escribir párrafos, datos ni texto legal en manuscrita.
+- **Don't** usar el rojo rotulador (#C83A2D) para texto pequeño; para eso está el rojo texto (#A3261B).
+- **Don't** oscurecer los papeles en la variante noche.
+- **Don't** inventar personas, clientes, opiniones, cifras ni precios.

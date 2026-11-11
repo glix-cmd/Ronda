@@ -9,18 +9,18 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var movimientoReducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var COLOR_TEMA = { claro: '#F4F0E9', oscuro: '#090807' };
+  var COLOR_TEMA = { claro: '#FFE94D', oscuro: '#0F0F0D' };
 
-  /* ---------- Tema: oscuro por defecto, variante clara elegible ---------- */
+  /* ---------- Tema: amarillo (claro) por defecto, variante noche elegible ---------- */
   function temaActivo() {
-    return raiz.getAttribute('data-tema') === 'claro' ? 'claro' : 'oscuro';
+    return raiz.getAttribute('data-tema') === 'oscuro' ? 'oscuro' : 'claro';
   }
   function pintarTema() {
     var activo = temaActivo();
     raiz.setAttribute('data-tema-activo', activo);
     $$('.btn-tema').forEach(function (b) {
       b.setAttribute('aria-pressed', activo === 'oscuro' ? 'true' : 'false');
-      b.setAttribute('aria-label', activo === 'oscuro' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      b.setAttribute('aria-label', activo === 'oscuro' ? 'Cambiar a modo día' : 'Cambiar a modo noche');
     });
     var meta = $('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', COLOR_TEMA[activo]);
@@ -42,7 +42,7 @@
   var progreso = $('.progreso span');
   var anillo = $('#arriba .anillo-prog');
   var hero = $('.hero');
-  var placas = movimientoReducido ? [] : $$('.interludio, .contacto');
+  var placas = movimientoReducido ? [] : $$('.contacto');
   var pendienteScroll = false;
   /* Un solo cálculo por fotograma: cabecera, barra de progreso de lectura,
      anillo del botón «volver arriba» y desplazamiento suave de la portada */
@@ -110,8 +110,6 @@
   var txtMenu = btnMenu && $('.btn-menu-txt', btnMenu);
   var fueraMenu = $$('main, .pie, .flotantes, .proto-barra, .barra-movil');
   function ponerMenu(abierto) {
-    /* El menú empieza justo bajo la cabecera, esté donde esté (la barra de prototipo la desplaza al principio) */
-    if (abierto && cab) menu.style.paddingTop = Math.round(Math.max(0, cab.getBoundingClientRect().bottom) + window.innerHeight * 0.04) + 'px';
     menu.classList.toggle('abierto', abierto);
     raiz.classList.toggle('menu-abierto', abierto);
     btnMenu.setAttribute('aria-expanded', abierto ? 'true' : 'false');
@@ -128,9 +126,11 @@
     btnMenu.addEventListener('click', function () {
       var abierto = !menu.classList.contains('abierto');
       ponerMenu(abierto);
-      if (abierto) { var a = $('a', menu); if (a) setTimeout(function () { a.focus({ preventScroll: true }); }, movimientoReducido ? 0 : 320); }
+      if (abierto) { var a = $('a', menu); if (a) setTimeout(function () { a.focus({ preventScroll: true }); }, movimientoReducido ? 0 : 200); }
     });
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) cerrarMenu(false); });
+    var mqAncho = window.matchMedia && matchMedia('(min-width: 1081px)');
+    if (mqAncho && mqAncho.addEventListener) mqAncho.addEventListener('change', function (e) { if (e.matches) cerrarMenu(false); });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') cerrarMenu(true);
     });
@@ -231,7 +231,7 @@
   var toast = $('#toast'), toastTimer = null;
   function avisar(titulo, texto) {
     if (!toast) return;
-    toast.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><div><b></b><span></span></div><button type="button" aria-label="Cerrar aviso"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button><i class="toast-tiempo" aria-hidden="true"></i>';
+    toast.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><div><b></b><span></span></div><button type="button" aria-label="Cerrar aviso"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button><i class="toast-tiempo" aria-hidden="true"></i>';
     $('b', toast).textContent = titulo;
     $('span', toast).textContent = texto;
     toast.classList.remove('pausa');
@@ -336,7 +336,7 @@
     function mostrarAviso(tipo, titulo, texto) {
       var trazo = tipo === 'ok' ? '<path d="M20 6 9 17l-5-5"/>' : '<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/>';
       aviso.className = 'aviso activo ' + tipo;
-      aviso.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">' + trazo + '</svg><div><b></b><span></span></div>';
+      aviso.innerHTML = '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + trazo + '</svg><div><b></b><span></span></div>';
       $('b', aviso).textContent = titulo;
       $('span', aviso).textContent = texto;
       aviso.setAttribute('tabindex', '-1');
@@ -476,65 +476,6 @@
       objetivoX = 0; objetivoY = 0;
       if (!girando) girando = requestAnimationFrame(paso);
     });
-  }
-
-  /* ---------- Portada: luces cálidas en suspensión ---------- */
-  var lienzo = $('.hero-luces');
-  if (lienzo && hero && lienzo.getContext && !movimientoReducido && window.requestAnimationFrame) {
-    var ctx = lienzo.getContext('2d'), luces = [], ancho = 0, alto = 0, dpr = 1, enMarcha = false, idLuces = null, tPrevio = null;
-    var crearLuces = function () {
-      var n = ancho < 760 ? 14 : 26;
-      luces = [];
-      for (var i = 0; i < n; i++) {
-        luces.push({
-          x: Math.random() * ancho, y: Math.random() * alto,
-          r: (6 + Math.random() * 30) * (ancho < 760 ? .8 : 1),
-          a: .05 + Math.random() * .13,
-          vy: -(4 + Math.random() * 10), fase: Math.random() * 6.28, amp: 6 + Math.random() * 16,
-          tono: Math.random() < .7 ? '231,160,82' : '201,104,52'
-        });
-      }
-    };
-    var medir = function () {
-      var r = hero.getBoundingClientRect();
-      dpr = Math.min(1.5, window.devicePixelRatio || 1);
-      ancho = r.width; alto = r.height;
-      lienzo.width = Math.round(ancho * dpr); lienzo.height = Math.round(alto * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      crearLuces();
-    };
-    var pintarLuces = function (t) {
-      idLuces = null;
-      if (!enMarcha) { tPrevio = null; return; }
-      var dt = tPrevio === null ? 0 : Math.min(64, t - tPrevio) / 1000;
-      tPrevio = t;
-      ctx.clearRect(0, 0, ancho, alto);
-      ctx.globalCompositeOperation = 'lighter';
-      luces.forEach(function (l) {
-        l.y += l.vy * dt; l.fase += dt * .25;
-        if (l.y < -l.r * 2) { l.y = alto + l.r * 2; l.x = Math.random() * ancho; }
-        var x = l.x + Math.sin(l.fase) * l.amp;
-        var g = ctx.createRadialGradient(x, l.y, 0, x, l.y, l.r);
-        g.addColorStop(0, 'rgba(' + l.tono + ',' + l.a + ')');
-        g.addColorStop(.55, 'rgba(' + l.tono + ',' + (l.a * .45) + ')');
-        g.addColorStop(1, 'rgba(' + l.tono + ',0)');
-        ctx.fillStyle = g;
-        ctx.beginPath(); ctx.arc(x, l.y, l.r, 0, 6.2832); ctx.fill();
-      });
-      idLuces = requestAnimationFrame(pintarLuces);
-    };
-    var activarLuces = function (si) {
-      enMarcha = si && !document.hidden;
-      if (enMarcha && idLuces === null) idLuces = requestAnimationFrame(pintarLuces);
-    };
-    medir();
-    lienzo.classList.add('activa');
-    var heroVisible = true;
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; activarLuces(heroVisible); }).observe(hero);
-    else activarLuces(true);
-    document.addEventListener('visibilitychange', function () { activarLuces(heroVisible); });
-    var reMedir = null;
-    window.addEventListener('resize', function () { clearTimeout(reMedir); reMedir = setTimeout(medir, 200); }, { passive: true });
   }
 
   /* ---------- Año del pie ---------- */

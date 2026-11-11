@@ -6,8 +6,8 @@
 <title>Ronda | Refuerzo de sala y venta asistida para hostelería en Madrid</title>
 <meta name="description" content="Especialistas de venta asistida en sala para restaurantes, bares y cafeterías de Madrid, en franjas de 3 a 6 horas: atentos a cada mesa en tus horas punta.">
 <link rel="canonical" href="https://ronda.example/">
-<meta name="theme-color" content="#090807">
-<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#FFE94D">
+<meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Ronda">
@@ -17,104 +17,174 @@
 <meta property="og:image" content="https://ronda.example/assets/img/og-ronda.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ronda, venta asistida en sala: una sala a la luz de las velas con el titular «En hora punta, alguien más haciendo la ronda»">
+<meta property="og:image:alt" content="Ronda, venta asistida en sala: cartel amarillo con el titular «En hora punta, alguien más haciendo la ronda» escrito a mano">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preload" href="assets/fonts/bodoni-moda-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" href="assets/img/atmosfera/sala-noche-2400.avif" imagesrcset="assets/img/atmosfera/sala-noche-1400.avif 1400w, assets/img/atmosfera/sala-noche-2400.avif 2400w" imagesizes="100vw" media="(min-width: 761px)">
+<link rel="preload" href="assets/fonts/just-me-again-down-here-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/tema.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ronda.example/#organizacion","name":"Ronda","alternateName":"Ronda, venta asistida en sala","url":"https://ronda.example/","logo":"https://ronda.example/assets/img/icono-512.png","description":"Empresa de Madrid que ofrece especialistas de venta asistida en sala para restaurantes, bares y otros negocios de hostelería en franjas de alta demanda.","areaServed":{"@type":"City","name":"Madrid"}},{"@type":"Service","@id":"https://ronda.example/#servicio","name":"Refuerzo de sala con venta asistida","serviceType":"Personal de sala para hostelería: venta asistida en mesa","description":"Especialistas de venta asistida en sala que, durante franjas de 3 a 6 horas, recorren las mesas, detectan necesidades y ofrecen productos de la carta del local con tacto.","provider":{"@id":"https://ronda.example/#organizacion"},"areaServed":{"@type":"City","name":"Madrid"},"audience":{"@type":"BusinessAudience","audienceType":"Restaurantes, bares, cafeterías y otros negocios de hostelería"}},{"@type":"WebSite","@id":"https://ronda.example/#web","url":"https://ronda.example/","name":"Ronda","inLanguage":"es-ES","publisher":{"@id":"https://ronda.example/#organizacion"}}]}</script>
 </head>
 <body class="con-portada">
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Trazo de rotulador: desplaza un poco los contornos para que no parezcan de regla -->
+    <filter id="rotulador" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="ruido"/>
+      <feDisplacementMap in="SourceGraphic" in2="ruido" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <symbol id="i-copa" viewBox="0 0 120 120">
+    <g filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path style="fill:var(--ilu-papel)" d="M36 14 H84 C86 44 78 66 60 68 C42 66 34 44 36 14 Z"/>
+      <path style="fill:var(--ilu-rojo)" d="M38.6 36 C50 40 70 32 81.4 36 C80 54 72 64 60 65.6 C48 64 40 54 38.6 36 Z"/>
+      <path d="M60 68 V100"/>
+      <path style="fill:var(--ilu-papel)" d="M40 104 C46 98 74 98 80 104 C74 109 46 109 40 104 Z"/>
+      <path d="M44 20 C43 30 44 40 47 47" stroke-width="2.4"/>
+    </g>
+  </symbol>
+  <symbol id="i-cana" viewBox="0 0 120 120">
+    <g filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path style="fill:var(--ilu-amarillo)" d="M37 32 L83 32 L77 106 L43 106 Z"/>
+      <path style="fill:var(--ilu-papel)" d="M32 36 C29 25 40 18 47 23 C50 14 63 13 67 21 C73 14 86 17 85 27 C93 29 91 41 83 39 L38 39 C33 40 31 39 32 36 Z"/>
+      <circle cx="53" cy="62" r="2.2" stroke-width="2"/><circle cx="65" cy="74" r="2.2" stroke-width="2"/><circle cx="58" cy="90" r="2.2" stroke-width="2"/><circle cx="70" cy="56" r="1.8" stroke-width="2"/>
+      <path d="M47 48 L45 96" stroke-width="2.4"/>
+    </g>
+  </symbol>
+  <symbol id="i-panera" viewBox="0 0 120 120">
+    <g filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path style="fill:var(--ilu-pan)" d="M50 60 C55 37 78 22 93 26 C101 30 92 47 75 60 Z"/>
+      <path d="M66 44 l6 -6 M74 39 l6 -6 M82 33 l5 -5" stroke-width="2.4"/>
+      <path style="fill:var(--ilu-pan)" d="M24 62 C21 46 44 39 57 50 C60 58 48 64 24 62 Z"/>
+      <path style="fill:var(--ilu-rosa)" d="M14 58 L106 58 L92 70 L28 70 Z"/>
+      <path style="fill:var(--ilu-amarillo)" d="M18 64 H102 L92 102 C86 108 34 108 28 102 Z"/>
+      <path d="M23 76 H97 M26 89 H94 M42 66 L46 104 M60 66 V106 M78 66 L74 104" stroke-width="2"/>
+    </g>
+  </symbol>
+  <symbol id="i-cafe" viewBox="0 0 120 120">
+    <g filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path style="fill:var(--ilu-papel)" d="M14 98 C26 89 94 89 106 98 C94 106 26 106 14 98 Z"/>
+      <path style="fill:var(--ilu-turquesa)" d="M28 54 H86 C86 82 76 95 57 95 C38 95 28 82 28 54 Z"/>
+      <path d="M86 61 C101 59 102 80 84 81"/>
+      <ellipse style="fill:var(--ilu-cafe)" cx="57" cy="54" rx="29" ry="6"/>
+      <path d="M44 42 C38 34 50 28 44 18 M58 42 C52 32 64 26 58 13 M72 42 C66 34 78 28 72 20" stroke-width="2.6"/>
+      <path style="stroke:var(--ilu-papel)" d="M40 68 h0.1 M52 75 h0.1 M66 68 h0.1 M73 79 h0.1 M46 84 h0.1" stroke-width="5"/>
+    </g>
+  </symbol>
+  <symbol id="i-flan" viewBox="0 0 120 120">
+    <g filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path style="fill:var(--ilu-papel)" d="M10 94 C22 84 98 84 110 94 C98 104 22 104 10 94 Z"/>
+      <path style="fill:var(--ilu-amarillo)" d="M29 92 L38 50 C50 45 70 45 82 50 L91 92 C72 98 48 98 29 92 Z"/>
+      <path style="fill:var(--ilu-rojo)" d="M38 50 C50 43 70 43 82 50 C81 57 72 59 72 66 C70 70 68 66 67 60 C58 61 50 61 45 59 C44 66 40 66 40 58 C38 56 38 53 38 50 Z"/>
+      <path d="M58 34 l2 -9 M70 37 l5 -8 M47 37 l-4 -8" stroke-width="2.4"/>
+    </g>
+  </symbol>
+  <symbol id="i-estrella" viewBox="0 0 120 120">
+    <path filter="url(#rotulador)" style="fill:var(--ilu-estrella)" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" d="M60 10 L73 45 L110 46 L81 68 L92 104 L60 83 L28 104 L39 68 L10 46 L47 45 Z"/>
+  </symbol>
+  <symbol id="i-destello" viewBox="0 0 120 120">
+    <path filter="url(#rotulador)" style="fill:var(--ilu-estrella)" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" d="M60 8 C64 44 76 56 112 60 C76 64 64 76 60 112 C56 76 44 64 8 60 C44 56 56 44 60 8 Z"/>
+  </symbol>
+  <symbol id="i-rayitas" viewBox="0 0 120 120">
+    <path filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M30 70 L14 58 M44 50 L36 26 M64 46 L70 20 M80 60 L102 46"/>
+  </symbol>
+  <symbol id="i-espiral" viewBox="0 0 120 120">
+    <path filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" d="M62 60 C62 54 54 54 54 60 C54 68 68 70 70 60 C72 46 52 42 46 56 C40 72 62 84 76 74 C92 62 84 34 60 32 C36 30 22 54 32 76"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 40 40">
+    <path filter="url(#rotulador)" fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" d="M6 22 C10 24 13 28 16 33 C21 20 27 12 36 5"/>
+  </symbol>
+  <symbol id="i-mancha" viewBox="0 0 400 400" preserveAspectRatio="none">
+    <path style="fill:var(--ilu-mancha)" d="M58 62 C92 18 168 34 212 20 C272 2 344 26 366 78 C388 132 352 164 376 214 C398 264 366 334 304 352 C252 368 222 352 180 370 C128 392 68 362 46 312 C26 262 50 236 30 190 C12 146 30 106 58 62 Z M384 92 C394 88 398 100 390 104 C382 108 376 96 384 92 Z M22 330 C32 324 40 336 30 342 C20 348 14 336 22 330 Z M206 380 C214 378 216 392 208 394 C200 396 198 382 206 380 Z"/>
+  </symbol>
+</svg>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 
 <aside class="proto-barra" aria-label="Aviso de prototipo"><div class="wrap"><span class="tag">Prototipo</span><span>«Ronda» es un nombre provisional. Los datos de contacto, precios y condiciones están pendientes.</span></div></aside>
 
 <header class="cab" id="cabecera">
   <div class="wrap cab-in">
-    <button class="btn-menu" type="button" aria-expanded="false" aria-controls="menu"><span class="hamb" aria-hidden="true"><i></i><i></i></span><span class="btn-menu-txt">Menú</span></button>
     <a class="marca" href="index.html" aria-label="Ronda, nombre provisional. Ir al inicio">
-      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><circle class="logo-aro" cx="20" cy="20" r="12"/><circle class="logo-punto" cx="29.6" cy="12.8" r="3.2"/></svg>
       <span class="marca-txt">Ronda</span>
+      <svg class="marca-lazo" viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M14 40 C4 22 40 6 70 8 C100 10 118 22 112 36 C106 50 70 56 44 52 C24 49 10 42 16 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle class="marca-punto" cx="104" cy="16" r="5"/></svg>
     </a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <ul class="menu-lista">
+        <li><a href="#oportunidad">La oportunidad</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#en-sala">En sala</a></li>
+        <li><a href="#ventajas">Ventajas</a></li>
+        <li><a href="#equipo">El equipo</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li class="menu-cta"><a href="#contacto">Solicitar propuesta</a></li>
+      </ul>
+    </nav>
     <div class="cab-acciones">
-      <button class="btn-icono btn-tema" type="button" aria-pressed="false" aria-label="Cambiar a modo claro"><svg class="icono luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="icono sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-      <a class="cta cta-cab" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button class="btn-icono btn-tema" type="button" aria-pressed="false" aria-label="Cambiar a modo noche"><svg class="icono luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="icono sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <a class="cta cta-cab" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="btn-menu" type="button" aria-expanded="false" aria-controls="menu"><span class="hamb" aria-hidden="true"><i></i><i></i><i></i></span><span class="btn-menu-txt">Menú</span></button>
     </div>
   </div>
+  <svg class="cab-borde" viewBox="0 0 1200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 C60 2 120 10 200 6 S330 2 420 7 S560 11 640 5 S790 1 880 6 S1040 10 1110 5 S1180 4 1200 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
   <div class="progreso" aria-hidden="true"><span></span></div>
 </header>
-
-<nav class="menu" id="menu" aria-label="Principal">
-  <div class="wrap menu-in">
-    <ul class="menu-lista">
-      <li><a href="#oportunidad">La oportunidad</a></li>
-      <li><a href="#como-funciona">Cómo funciona</a></li>
-      <li><a href="#en-sala">En sala</a></li>
-      <li><a href="#ventajas">Ventajas</a></li>
-      <li><a href="#equipo">El equipo</a></li>
-      <li><a href="#preguntas">Preguntas</a></li>
-      <li class="menu-cta"><a href="#contacto">Solicitar propuesta</a></li>
-    </ul>
-    <div class="menu-pie">
-      <p>Refuerzo de sala para hostelería en Madrid</p>
-      <p>hola@ronda.example <span class="etiqueta">Correo de ejemplo</span></p>
-    </div>
-  </div>
-</nav>
 
 <main id="contenido">
 
   <!-- Portada -->
-  <section class="hero portada" id="inicio" aria-labelledby="titulo">
-    <div class="hero-fondo" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 760px)" type="image/avif" srcset="assets/img/atmosfera/sala-noche-vertical-750.avif 750w, assets/img/atmosfera/sala-noche-vertical-1100.avif 1100w" sizes="100vw">
-        <source media="(max-width: 760px)" type="image/webp" srcset="assets/img/atmosfera/sala-noche-vertical-750.webp 750w, assets/img/atmosfera/sala-noche-vertical-1100.webp 1100w" sizes="100vw">
-        <source type="image/avif" srcset="assets/img/atmosfera/sala-noche-1400.avif 1400w, assets/img/atmosfera/sala-noche-2400.avif 2400w" sizes="100vw">
-        <source type="image/webp" srcset="assets/img/atmosfera/sala-noche-1400.webp 1400w, assets/img/atmosfera/sala-noche-2400.webp 2400w" sizes="100vw">
-        <img src="assets/img/atmosfera/sala-noche-1400.webp" alt="" width="2400" height="1400" fetchpriority="high" decoding="async">
-      </picture>
-      <canvas class="hero-luces"></canvas>
+  <section class="hero portada bloque amarillo-hero" id="inicio" aria-labelledby="titulo">
+    <div class="hero-recortes" aria-hidden="true">
+      <figure class="recorte r1"><svg viewBox="0 0 120 120"><use href="#i-copa"/></svg><span>¿otra ronda?</span></figure>
+      <figure class="recorte r2"><svg viewBox="0 0 120 120"><use href="#i-panera"/></svg><span>¿más pan?</span></figure>
+      <figure class="recorte r3"><svg viewBox="0 0 120 120"><use href="#i-cafe"/></svg><span>¿unos cafés?</span></figure>
+      <figure class="recorte r4"><svg viewBox="0 0 120 120"><use href="#i-flan"/></svg><span>¿algo dulce?</span></figure>
+      <svg class="garabato g1" viewBox="0 0 120 120"><use href="#i-destello"/></svg>
+      <svg class="garabato g2" viewBox="0 0 120 120"><use href="#i-estrella"/></svg>
+      <svg class="garabato g3" viewBox="0 0 120 120"><use href="#i-espiral"/></svg>
     </div>
     <div class="wrap hero-contenido">
-      <h1 id="titulo" class="hero-titulo"><span class="linea"><span>En hora punta,</span></span> <span class="linea"><span>alguien más <em>haciendo la ronda</em></span></span></h1>
+      <h1 id="titulo" class="hero-titulo">En hora punta, alguien más haciendo <span class="rodeo">la ronda<svg class="rodeo-ovalo" viewBox="0 0 260 110" preserveAspectRatio="none" aria-hidden="true"><path class="trazo" pathLength="1" d="M20 64 C8 32 70 10 140 12 C212 14 254 34 250 60 C246 88 180 102 118 98 C58 94 12 84 16 58 C19 40 52 25 96 20"/></svg></span></h1>
       <p class="hero-entrada">Especialistas de venta asistida en sala para restaurantes, bares y cafeterías de Madrid. Recorren las mesas en tus franjas de más trabajo y ofrecen con tacto otra bebida, más pan o un café.</p>
       <div class="hero-acciones">
-        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <p class="nota-cta">o pídela por <a class="enlace" data-whatsapp href="#contacto">WhatsApp</a></p>
       </div>
-    </div>
-    <div class="wrap hero-pie">
       <dl class="hechos">
-        <div><dt>Franjas</dt><dd>De 3 a 6 horas</dd></div>
-        <div><dt>Para</dt><dd>Restaurantes, bares y cafeterías</dd></div>
-        <div><dt>Dónde</dt><dd>Madrid</dd></div>
+        <div class="pegatina p1"><dt>Franjas</dt><dd>De 3 a 6 horas</dd></div>
+        <div class="pegatina p2"><dt>Para</dt><dd>Restaurantes, bares y cafeterías</dd></div>
+        <div class="pegatina p3"><dt>Dónde</dt><dd>Madrid</dd></div>
       </dl>
-      <p class="hero-nota">Atmósfera generada · foto real pendiente</p>
     </div>
+    <svg class="sello" viewBox="0 0 200 200" aria-hidden="true">
+      <defs><path id="sello-circulo" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"/></defs>
+      <g class="sello-giro">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="100" cy="100" r="54" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text class="sello-texto"><textPath href="#sello-circulo" startOffset="0">PROTOTIPO · NOMBRE PROVISIONAL · MADRID ·</textPath></text>
+      </g>
+      <text class="sello-centro" x="100" y="112" text-anchor="middle">Ronda</text>
+    </svg>
   </section>
 
   <!-- La oportunidad -->
-  <section class="seccion" id="oportunidad" aria-labelledby="t-oportunidad">
+  <section class="seccion bloque rosa" id="oportunidad" aria-labelledby="t-oportunidad">
     <div class="wrap oportunidad">
-      <h2 id="t-oportunidad" class="oportunidad-titulo revelar">Con la sala llena, las mesas piden cosas sin decirlo</h2>
+      <h2 id="t-oportunidad" class="oportunidad-titulo revelar">Con la sala llena, las mesas piden cosas sin decirlo<svg class="subrayado" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path class="trazo" pathLength="1" d="M4 12 C60 4 120 16 180 9 S270 6 296 11"/></svg></h2>
       <div class="oportunidad-texto revelar">
         <p class="intro">En hora punta tu equipo va de la cocina a la barra y de la barra a la cuenta. Mientras, en las mesas pasan cosas pequeñas: un vaso que se acaba, el pan que se termina con la salsa a medias, una sobremesa que se alarga sin que nadie pregunte por el café.</p>
         <p>No es falta de ganas: en esos momentos no se llega a todo. Y cada uno de esos detalles es una ocasión de atender mejor a la mesa y, a veces, de que pida algo más.</p>
-        <p class="remate">Ahí entra la ronda: alguien cuya única tarea es estar pendiente de esas mesas.</p>
+        <p class="remate"><span>Ahí entra la ronda: alguien cuya única tarea es estar pendiente de esas mesas.</span></p>
       </div>
-      <article class="mesa-tiempo revelar" aria-labelledby="t-mesa6">
+      <article class="mesa-tiempo papel bloc revelar" aria-labelledby="t-mesa6">
         <div class="mesa-tiempo-cab">
           <h3 id="t-mesa6">Mesa 6, un sábado</h3>
           <span class="etiqueta">Ejemplo ilustrativo</span>
         </div>
-        <ol class="linea-tiempo revelar-grupo">
+        <ol class="linea-tiempo">
           <li><time>14:05</time><p>Llegan los primeros platos.</p></li>
           <li class="ocasion"><time>14:18</time><p><b>Dos copas vacías.</b> Nadie pasa por la mesa.</p></li>
           <li class="ocasion"><time>14:26</time><p><b>Se acaba el pan</b> con la salsa a medias.</p></li>
@@ -123,38 +193,42 @@
           <li><time>15:00</time><p>Piden la cuenta.</p></li>
         </ol>
       </article>
+      <svg class="flecha-dibujada f-oportunidad revelar" viewBox="0 0 160 120" aria-hidden="true"><path class="trazo" pathLength="1" d="M150 14 C110 10 60 30 42 70 C36 84 34 96 36 108"/><path class="trazo" pathLength="1" d="M22 92 L36 110 L52 94"/></svg>
     </div>
   </section>
 
   <!-- Cómo funciona -->
-  <section class="seccion alt" id="como-funciona" aria-labelledby="t-pasos">
-    <div class="wrap pasos-grid">
+  <section class="seccion bloque blanco" id="como-funciona" aria-labelledby="t-pasos">
+    <div class="wrap">
       <div class="pasos-cabeza revelar">
         <h2 id="t-pasos">De la primera llamada a la primera ronda</h2>
         <p class="intro">Cuatro pasos y un único interlocutor. Nada empieza hasta que tienes la propuesta por escrito y la aceptas.</p>
       </div>
-      <ol class="pasos revelar-grupo">
-        <li class="paso"><h3>Nos cuentas tu caso</h3><p>Desde el formulario o por WhatsApp: tipo de local, zona y las franjas en las que vas más justo.</p></li>
-        <li class="paso"><h3>Conocemos tu sala</h3><p>Hablamos contigo y, si hace falta, visitamos el local para conocer la carta, qué tiene sentido ofrecer y cómo trabaja tu equipo.</p></li>
-        <li class="paso"><h3>Recibes la propuesta</h3><p>Por escrito: franjas, horas, número de especialistas, precio y condiciones del servicio.</p></li>
-        <li class="paso"><h3>Empieza la ronda</h3><p>El día acordado llega el especialista de Ronda, repasa con tu persona de contacto lo pactado y empieza a recorrer las mesas.</p></li>
-      </ol>
+      <div class="pasos-camino">
+        <svg class="camino" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path class="trazo" pathLength="1" d="M40 34 C180 4 300 56 440 30 S700 6 820 32 S1060 54 1160 26"/></svg>
+        <ol class="pasos revelar-grupo">
+          <li class="paso"><span class="paso-n" aria-hidden="true">1<svg viewBox="0 0 100 100"><path class="trazo" pathLength="1" d="M52 10 C20 8 8 34 12 58 C16 84 44 94 66 88 C88 82 96 56 88 34 C82 18 66 8 44 12"/></svg></span><h3>Nos cuentas tu caso</h3><p>Desde el formulario o por WhatsApp: tipo de local, zona y las franjas en las que vas más justo.</p></li>
+          <li class="paso"><span class="paso-n" aria-hidden="true">2<svg viewBox="0 0 100 100"><path class="trazo" pathLength="1" d="M48 12 C22 12 8 36 14 60 C20 84 48 94 70 86 C92 78 96 52 86 32 C78 16 60 8 40 14"/></svg></span><h3>Conocemos tu sala</h3><p>Hablamos contigo y, si hace falta, visitamos el local para conocer la carta, qué tiene sentido ofrecer y cómo trabaja tu equipo.</p></li>
+          <li class="paso"><span class="paso-n" aria-hidden="true">3<svg viewBox="0 0 100 100"><path class="trazo" pathLength="1" d="M54 8 C24 10 10 32 12 56 C14 82 40 96 64 90 C90 84 98 58 90 36 C84 20 70 10 46 12"/></svg></span><h3>Recibes la propuesta</h3><p>Por escrito: franjas, horas, número de especialistas, precio y condiciones del servicio.</p></li>
+          <li class="paso"><span class="paso-n" aria-hidden="true">4<svg viewBox="0 0 100 100"><path class="trazo" pathLength="1" d="M50 10 C22 10 10 34 12 58 C14 84 42 96 66 88 C90 80 96 54 88 32 C80 16 64 8 42 14"/></svg></span><h3>Empieza la ronda</h3><p>El día acordado llega el especialista de Ronda, repasa con tu persona de contacto lo pactado y empieza a recorrer las mesas.</p></li>
+        </ol>
+      </div>
       <div class="pasos-pie revelar">
         <p><b>¿Hay una franja que se te queda corta?</b> Cuéntanos cuál y preparamos una propuesta para ella.</p>
-        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </section>
 
   <!-- En sala -->
-  <section class="seccion" id="en-sala" aria-labelledby="t-sala">
+  <section class="seccion bloque amarillo" id="en-sala" aria-labelledby="t-sala">
     <div class="wrap">
       <div class="sala-cabeza revelar">
         <h2 id="t-sala">Venta asistida: atenta, ágil y sin agobiar</h2>
         <p class="intro">El especialista no es un camarero más ni un vendedor que presiona. Su trabajo es observar, adelantarse y ofrecer en el momento oportuno lo que ya está en tu carta.</p>
       </div>
       <div class="sala-grid">
-        <figure class="plano revelar" aria-labelledby="plano-titulo">
+        <figure class="plano papel revelar" aria-labelledby="plano-titulo">
           <div class="plano-cab">
             <span><b>Sábado, 14:30</b> · servicio de comidas</span>
             <span class="plano-estado"><span class="punto" aria-hidden="true"></span>Sala llena</span>
@@ -162,7 +236,7 @@
           <svg viewBox="0 0 560 420" role="img" aria-labelledby="plano-titulo plano-desc">
             <title id="plano-titulo">Plano ilustrativo de una sala en hora punta</title>
             <desc id="plano-desc">Vista desde arriba de un comedor con barra, cocina y ocho mesas. Una línea discontinua dibuja la ruta que recorre el especialista entre todas las mesas. En cuatro de ellas aparece un bocadillo con lo que ofrece o le responden: «¿Otra ronda?», «¿Más pan?», «¿Unos cafés?» y «No, gracias».</desc>
-            <rect class="p-suelo" x="8" y="8" width="544" height="404" rx="4"/>
+            <rect class="p-suelo" x="8" y="8" width="544" height="404" rx="10"/>
             <rect class="p-barra" x="36" y="24" width="268" height="36" rx="2"/>
             <text class="p-barra-txt" x="170" y="42" text-anchor="middle" dominant-baseline="central">Barra</text>
             <rect class="p-zona" x="330" y="24" width="194" height="36" rx="2"/>
@@ -208,25 +282,25 @@
         <div class="comandas">
           <p class="etiqueta comandas-nota">Situaciones de ejemplo</p>
           <ol class="comandas-lista revelar-grupo">
-            <li class="comanda">
+            <li class="comanda papel">
               <p class="comanda-cab"><span>Mesa 2</span><span>Comida</span></p>
               <p class="situacion">Vasos casi vacíos a mitad de plato.</p>
               <blockquote>¿Os pongo otra ronda de lo mismo?</blockquote>
               <p class="resultado">Si dicen que sí, el pedido entra por el canal que hayáis acordado.</p>
             </li>
-            <li class="comanda">
+            <li class="comanda papel">
               <p class="comanda-cab"><span>Mesa 5</span><span>Comida</span></p>
               <p class="situacion">Salsa en el plato y la panera vacía.</p>
               <blockquote>¿Os traigo un poco más de pan?</blockquote>
               <p class="resultado">Un detalle pequeño que la mesa nota.</p>
             </li>
-            <li class="comanda">
+            <li class="comanda papel">
               <p class="comanda-cab"><span>Mesa 6</span><span>Sobremesa</span></p>
               <p class="situacion">Platos retirados y la charla sigue.</p>
               <blockquote>¿Os apetece un café o algo dulce antes de la cuenta?</blockquote>
               <p class="resultado">Se ofrece antes de que pidan la cuenta, no después.</p>
             </li>
-            <li class="comanda no">
+            <li class="comanda papel no">
               <p class="comanda-cab"><span>Mesa 8</span><span>Comida</span></p>
               <p class="situacion">La mesa responde: «No, gracias».</p>
               <blockquote>Perfecto. Si necesitáis algo, aquí estoy.</blockquote>
@@ -235,10 +309,10 @@
           </ol>
           <p class="etiqueta comandas-nota principios-nota">Reglas de la ronda</p>
           <ul class="principios revelar-grupo">
-            <li class="principio"><h3>Observa antes de hablar</h3><p>Se fija en vasos, panera, platos y miradas antes de acercarse.</p></li>
-            <li class="principio"><h3>Solo lo que hay en tu carta</h3><p>Tus productos, a tus precios. Ni descuentos ni promociones que no hayas aprobado.</p></li>
-            <li class="principio"><h3>Un «no» se respeta a la primera</h3><p>Sin insistir ni volver a la carga con lo mismo.</p></li>
-            <li class="principio"><h3>Suma, no sustituye</h3><p>Se coordina con tu equipo según lo acordado, sin ocupar su lugar.</p></li>
+            <li class="principio"><svg class="check" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Observa antes de hablar</h3><p>Se fija en vasos, panera, platos y miradas antes de acercarse.</p></div></li>
+            <li class="principio"><svg class="check" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Solo lo que hay en tu carta</h3><p>Tus productos, a tus precios. Ni descuentos ni promociones que no hayas aprobado.</p></div></li>
+            <li class="principio"><svg class="check" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Un «no» se respeta a la primera</h3><p>Sin insistir ni volver a la carga con lo mismo.</p></div></li>
+            <li class="principio"><svg class="check" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Suma, no sustituye</h3><p>Se coordina con tu equipo según lo acordado, sin ocupar su lugar.</p></div></li>
           </ul>
         </div>
       </div>
@@ -246,27 +320,28 @@
   </section>
 
   <!-- Interludio -->
-  <section class="interludio" aria-labelledby="t-interludio">
-    <div class="interludio-fondo" aria-hidden="true">
-      <picture>
-        <source type="image/avif" srcset="assets/img/atmosfera/barra-noche-1400.avif 1400w, assets/img/atmosfera/barra-noche-2400.avif 2400w" sizes="100vw">
-        <source type="image/webp" srcset="assets/img/atmosfera/barra-noche-1400.webp 1400w, assets/img/atmosfera/barra-noche-2400.webp 2400w" sizes="100vw">
-        <img src="assets/img/atmosfera/barra-noche-1400.webp" alt="" width="2400" height="1100" loading="lazy" decoding="async">
-      </picture>
+  <section class="interludio bloque negro" aria-labelledby="t-interludio">
+    <div class="interludio-garabatos" aria-hidden="true">
+      <svg class="garabato i1" viewBox="0 0 120 120"><use href="#i-estrella"/></svg>
+      <svg class="garabato i2" viewBox="0 0 120 120"><use href="#i-destello"/></svg>
+      <svg class="garabato i3" viewBox="0 0 120 120"><use href="#i-rayitas"/></svg>
+      <svg class="garabato i4" viewBox="0 0 120 120"><use href="#i-destello"/></svg>
+      <svg class="brindis b1" viewBox="0 0 120 120"><use href="#i-copa"/></svg>
+      <svg class="brindis b2" viewBox="0 0 120 120"><use href="#i-cana"/></svg>
     </div>
     <div class="wrap interludio-in revelar">
       <p id="t-interludio" class="interludio-frase">¿Otra ronda?</p>
+      <svg class="subrayado subrayado-interludio" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path class="trazo" pathLength="1" d="M6 14 C70 4 140 20 200 10 S280 8 294 14"/><path class="trazo" pathLength="1" d="M40 20 C100 14 170 22 250 17"/></svg>
       <p class="interludio-texto">La pregunta justa, en el momento justo, y ni una vez más.</p>
-      <p class="interludio-nota">Atmósfera generada · foto real pendiente</p>
     </div>
   </section>
 
   <!-- Ventajas -->
-  <section class="seccion" id="ventajas" aria-labelledby="t-ventajas">
+  <section class="seccion bloque blanco" id="ventajas" aria-labelledby="t-ventajas">
     <div class="wrap">
       <h2 id="t-ventajas" class="ventajas-titulo revelar">Refuerzo donde aprieta, sin cambiar tu forma de trabajar</h2>
       <div class="ventajas revelar-grupo">
-        <article class="ventaja-destacada">
+        <article class="ventaja-destacada papel amarilla">
           <h3>Solo las franjas que necesitas</h3>
           <p>Contratas franjas concretas, de 3 a 6 horas: el menú del mediodía, el viernes por la noche, el vermú del domingo o un día señalado.</p>
           <table class="semana">
@@ -288,50 +363,53 @@
   </section>
 
   <!-- El equipo -->
-  <section class="seccion noche" id="equipo" aria-labelledby="t-equipo">
+  <section class="seccion bloque rosa" id="equipo" aria-labelledby="t-equipo">
     <div class="wrap equipo-grid">
       <div class="equipo-texto revelar">
         <h2 id="t-equipo">Personas que se mueven bien en una sala llena</h2>
         <p class="intro">Buscamos un perfil concreto: gente que disfruta del ritmo de la hora punta y sabe tratar con todo tipo de clientes.</p>
-        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <p class="equipo-nota"><span class="tag">Pendiente</span> Aquí se explicará el proceso real de selección y formación del equipo cuando esté definido.</p>
       </div>
-      <ul class="rasgos revelar-grupo">
-        <li><b>Despiertas</b><span>Ven la mesa que necesita algo antes de que levanten la mano.</span></li>
-        <li><b>Activas</b><span>Llevan bien el ritmo de un viernes a las diez de la noche.</span></li>
-        <li><b>Comunicativas</b><span>Ofrecen con naturalidad, sin sonar a guion aprendido.</span></li>
-        <li><b>Observadoras</b><span>Leen cada mesa: quién tiene prisa y quién quiere sobremesa.</span></li>
-        <li><b>Con don de gentes</b><span>Saben cuándo acercarse, cuándo hablar y cuándo retirarse.</span></li>
-      </ul>
+      <div class="equipo-collage">
+        <figure class="polaroid hueco-foto revelar">
+          <div class="hueco" aria-hidden="true"><span>foto real<br>pendiente</span></div>
+          <figcaption>Hueco para una foto real del equipo</figcaption>
+        </figure>
+        <ul class="rasgos revelar-grupo">
+          <li><b>Despiertas</b><span>Ven la mesa que necesita algo antes de que levanten la mano.</span></li>
+          <li><b>Activas</b><span>Llevan bien el ritmo de un viernes a las diez de la noche.</span></li>
+          <li><b>Comunicativas</b><span>Ofrecen con naturalidad, sin sonar a guion aprendido.</span></li>
+          <li><b>Observadoras</b><span>Leen cada mesa: quién tiene prisa y quién quiere sobremesa.</span></li>
+          <li><b>Con don de gentes</b><span>Saben cuándo acercarse, cuándo hablar y cuándo retirarse.</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- Opiniones: espacio reservado -->
-  <section class="seccion" id="opiniones" aria-labelledby="t-opiniones">
+  <section class="seccion bloque amarillo" id="opiniones" aria-labelledby="t-opiniones">
     <div class="wrap opiniones">
       <div class="opiniones-texto revelar">
+        <svg class="comillas" viewBox="0 0 120 70" aria-hidden="true"><path filter="url(#rotulador)" d="M30 8 C14 14 6 28 8 44 C10 58 22 64 32 60 C44 56 46 42 38 36 C30 30 20 34 18 40 C18 26 26 18 36 14 Z M84 8 C68 14 60 28 62 44 C64 58 76 64 86 60 C98 56 100 42 92 36 C84 30 74 34 72 40 C72 26 80 18 90 14 Z"/></svg>
         <h2 id="t-opiniones">Aquí hablarán los locales</h2>
         <p>Espacio reservado para opiniones reales de locales que trabajen con Ronda, publicadas con su permiso. Todavía no hay ninguna: es un proyecto nuevo.</p>
         <p class="nota"><span class="tag">Pendiente de contenido real</span> Opinión, nombre del local y retrato, con su autorización.</p>
       </div>
-      <figure class="retrato revelar">
-        <div class="retrato-marco"><picture>
-          <source type="image/avif" srcset="assets/img/atmosfera/retrato-vela-600.avif 600w, assets/img/atmosfera/retrato-vela-900.avif 900w" sizes="(max-width: 760px) 80vw, 420px">
-          <source type="image/webp" srcset="assets/img/atmosfera/retrato-vela-600.webp 600w, assets/img/atmosfera/retrato-vela-900.webp 900w" sizes="(max-width: 760px) 80vw, 420px">
-          <img src="assets/img/atmosfera/retrato-vela-600.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        </picture></div>
-        <figcaption>Hueco para el retrato de un local real · atmósfera generada</figcaption>
+      <figure class="polaroid retrato hueco-foto revelar">
+        <div class="hueco" aria-hidden="true"><span>retrato<br>pendiente</span></div>
+        <figcaption>Hueco para el retrato de un local real</figcaption>
       </figure>
     </div>
   </section>
 
   <!-- Preguntas -->
-  <section class="seccion alt" id="preguntas" aria-labelledby="t-faq">
+  <section class="seccion bloque blanco" id="preguntas" aria-labelledby="t-faq">
     <div class="wrap faq-grid">
       <div class="lateral revelar">
         <h2 id="t-faq">Lo que suelen preguntar los hosteleros</h2>
         <p class="intro">Las condiciones concretas se fijarán en cada propuesta y en el contrato. Lo que aún no está definido aparece marcado como pendiente.</p>
-        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="cta" href="#contacto"><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="faq revelar">
         <details>
@@ -375,22 +453,15 @@
   </section>
 
   <!-- Contacto -->
-  <section class="contacto" id="contacto" aria-labelledby="t-contacto">
-    <div class="contacto-fondo" aria-hidden="true">
-      <picture>
-        <source type="image/avif" srcset="assets/img/atmosfera/mesa-velas-1400.avif 1400w, assets/img/atmosfera/mesa-velas-2400.avif 2400w" sizes="100vw">
-        <source type="image/webp" srcset="assets/img/atmosfera/mesa-velas-1400.webp 1400w, assets/img/atmosfera/mesa-velas-2400.webp 2400w" sizes="100vw">
-        <img src="assets/img/atmosfera/mesa-velas-1400.webp" alt="" width="2400" height="1500" loading="lazy" decoding="async">
-      </picture>
-    </div>
+  <section class="contacto seccion bloque turquesa" id="contacto" aria-labelledby="t-contacto">
     <div class="wrap contacto-grid">
       <div class="contacto-texto revelar">
         <h2 id="t-contacto">Cuéntanos cómo es tu sala</h2>
         <p class="intro">Rellena el formulario para solicitar una propuesta para las franjas que necesitas. Si lo prefieres, pídela por WhatsApp con la misma información.</p>
         <ul class="canales">
           <li><a class="canal wa" data-whatsapp href="#contacto"><svg class="icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"/></svg><span><b>Solicitar propuesta por WhatsApp</b><span data-whatsapp-estado>Número pendiente de configurar (prototipo)</span></span></a></li>
-          <li><div class="canal"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span><b>hola@ronda.example</b><span>Correo de ejemplo, no operativo</span></span></div></li>
-          <li><div class="canal"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Madrid</b><span>Dirección pendiente</span></span></div></li>
+          <li><div class="canal"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span><b>hola@ronda.example</b><span>Correo de ejemplo, no operativo</span></span></div></li>
+          <li><div class="canal"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Madrid</b><span>Dirección pendiente</span></span></div></li>
         </ul>
         <div class="despues">
           <h3>Qué pasa después</h3>
@@ -401,12 +472,14 @@
           </ol>
         </div>
       </div>
-      <form class="form panel revelar" id="form-contacto" novalidate aria-labelledby="t-form">
+      <div class="form-mancha">
+        <svg class="mancha" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true"><use href="#i-mancha"/></svg>
+        <form class="form revelar" id="form-contacto" novalidate aria-labelledby="t-form">
         <div class="form-cab">
           <h3 id="t-form">Solicitar propuesta</h3>
           <p>* Campo obligatorio</p>
         </div>
-        <p class="demo-aviso" data-demo-aviso><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><span><b>Modo demostración.</b> Este formulario todavía no está conectado a ningún servicio de envío: puedes probarlo, pero no se enviará nada.</span></p>
+        <p class="demo-aviso" data-demo-aviso><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.4"/></svg><span><b>Modo demostración.</b> Este formulario todavía no está conectado a ningún servicio de envío: puedes probarlo, pero no se enviará nada.</span></p>
         <noscript><p class="demo-aviso">El formulario necesita JavaScript activado.</p></noscript>
         <div class="campos">
           <div class="campo">
@@ -470,22 +543,23 @@
         </div>
         <p class="info-datos"><b>Protección de datos.</b> Responsable: <mark class="pendiente">titular de Ronda, por definir</mark>. Finalidad: atender tu solicitud y preparar una propuesta. Legitimación: <mark class="pendiente">base jurídica pendiente de validar</mark>. Destinatarios: los proveedores del formulario y del alojamiento web, como encargados del tratamiento. Derechos: acceso, rectificación, supresión y los demás que explica la <a class="enlace" href="privacidad.html">política de privacidad</a>.</p>
         <div class="form-pie">
-          <button class="cta cta-enviar" type="submit" disabled><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          <button class="cta cta-enviar" type="submit" disabled><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <p class="nota-cta">o por <a class="enlace" data-whatsapp href="#contacto">WhatsApp</a></p>
         </div>
         <div class="aviso" id="form-aviso" role="status" aria-live="polite"></div>
       </form>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="pie">
+<footer class="pie bloque negro">
   <div class="wrap">
     <div class="pie-marca">
       <a class="marca" href="index.html" aria-label="Ronda, nombre provisional. Ir al inicio">
-        <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><circle class="logo-aro" cx="20" cy="20" r="12"/><circle class="logo-punto" cx="29.6" cy="12.8" r="3.2"/></svg>
         <span class="marca-txt">Ronda</span>
+        <svg class="marca-lazo" viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M14 40 C4 22 40 6 70 8 C100 10 118 22 112 36 C106 50 70 56 44 52 C24 49 10 42 16 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle class="marca-punto" cx="104" cy="16" r="5"/></svg>
       </a>
       <p>Especialistas de venta asistida en sala para restaurantes, bares y cafeterías de Madrid.</p>
     </div>
@@ -511,7 +585,7 @@
       </div>
       <div>
         <h2>Prototipo</h2>
-        <p class="pie-proto">«Ronda» es un nombre provisional, los datos de contacto son de ejemplo y las condiciones del servicio están pendientes de definir. Las imágenes son atmósferas generadas.</p>
+        <p class="pie-proto">«Ronda» es un nombre provisional, los datos de contacto son de ejemplo y las condiciones del servicio están pendientes de definir. Las ilustraciones son dibujos propios; las fotos reales están pendientes.</p>
       </div>
     </div>
     <div class="pie-legal">
@@ -536,11 +610,11 @@
 
 <aside class="flotantes" aria-label="Accesos rápidos">
   <a class="whatsapp" data-whatsapp href="#contacto"><svg class="icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"/></svg><span>WhatsApp</span></a>
-  <button class="arriba" id="arriba" type="button" aria-label="Volver arriba"><svg class="anillo" viewBox="0 0 48 48" aria-hidden="true"><circle class="anillo-fondo" cx="24" cy="24" r="22.5"/><circle class="anillo-prog" cx="24" cy="24" r="22.5" pathLength="100"/></svg><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+  <button class="arriba" id="arriba" type="button" aria-label="Volver arriba"><svg class="anillo" viewBox="0 0 48 48" aria-hidden="true"><circle class="anillo-fondo" cx="24" cy="24" r="21"/><circle class="anillo-prog" cx="24" cy="24" r="21" pathLength="100"/></svg><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 </aside>
 
 <aside class="barra-movil" id="barra-movil" aria-label="Acción principal" aria-hidden="true">
-  <a class="cta cta-bloque" href="#contacto" tabindex="-1"><span class="cta-txt">Solicitar propuesta</span><span class="cta-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a class="cta cta-bloque" href="#contacto" tabindex="-1"><span class="cta-txt">Solicitar propuesta</span><svg class="cta-flecha" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 13 C12 10 22 15 33 11 M25 4 L35 11 L27 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <a class="btn-wa" data-whatsapp href="#contacto" tabindex="-1" aria-label="Solicitar propuesta por WhatsApp"><svg class="icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"/></svg></a>
 </aside>
 
